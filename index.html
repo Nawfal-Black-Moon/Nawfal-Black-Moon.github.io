@@ -384,7 +384,9 @@ end
 &lt;/div&gt;
 &lt;script&gt;
   document.addEventListener(&#39;click&#39;, function() {
-    document.getElementById(&#39;hidden-text&#39;).style.display = &#39;block&#39;;
+    if(document.getElementById(&#39;hidden-text&#39;)){
+      document.getElementById(&#39;hidden-text&#39;).style.display = &#39;block&#39;;
+    }
   });
 &lt;/script&gt;
 
@@ -433,7 +435,9 @@ end
 &lt;/div&gt;
 &lt;script&gt;
 document.addEventListener(&#39;click&#39;, function() {
-  document.getElementById(&#39;glow-text&#39;).style.display = &#39;block&#39;;
+  if(document.getElementById(&#39;glow-text&#39;)){
+    document.getElementById(&#39;glow-text&#39;).style.display = &#39;block&#39;;
+  }
 });
 &lt;/script&gt;</tw-passagedata><tw-passagedata pid="24" name="隐藏问题" tags="" position="800,1100" size="100,100">他是谁？？！
 你确定刚刚一瞬间有什么人出现在了你的面前，黑纱遮住的脸庞只留给了你苍白的印象，苍白的身躯苍白的脸庞，还有那双透过黑纱毫不遮掩的注视着你的眼睛，消失的如此之快不是鬼就是幻觉
@@ -470,12 +474,14 @@ document.addEventListener(&#39;click&#39;, function() {
 &lt;/span&gt;
 你注视着圆月，白色的月亮那样宁静，美好，他会包容万物，他是如此慈悲和&lt;span id=&quot;changeable-text&quot; style=&quot;color: white; cursor: pointer;&quot;&gt;■■&lt;/span&gt;
 &lt;script&gt;
+if(document.getElementById(&#39;changeable-text&#39;)){
   document.getElementById(&#39;changeable-text&#39;).addEventListener(&#39;click&#39;, function() {
     this.textContent = &quot;宽容&quot;;
     this.style.color = &quot;red&quot;;
     this.style.fontWeight = &quot;bold&quot;;
     this.style.fontSize = &quot;24px&quot;;
   });
+}
 &lt;/script&gt;
 苍白的人影再次出现在你眼前，但那道冰冷的视线并没有再次出现，你已经获得了他的信任
 你看着那张洁白的面孔，你终于理解了月亮的注视。哦，荒唐啊，那无缘由的误解啊！哦，愚昧啊，自觉把自己从美好的理想国里放逐！一个完美的微笑在你的脸上展露出来。不过这样也好，一切都很好，审核已经通过，你获得了留在理想国的资格，[[你爱月亮|完美结局]]
@@ -512,6 +518,7 @@ document.addEventListener(&#39;click&#39;, function() {
   贫民窟
 &lt;/div&gt;
 &lt;script&gt;
+if(document.getElementById(&#39;text-display&#39;)){
   document.getElementById(&#39;text-display&#39;).addEventListener(&#39;click&#39;, function() {
     // 第一步：蓝色文本消失
     this.style.display = &#39;none&#39;;
@@ -532,6 +539,7 @@ document.addEventListener(&#39;click&#39;, function() {
       redText.remove();
     }, 1000);
   });
+}
 &lt;/script&gt;</tw-passagedata><tw-passagedata pid="30" name="坏问题七" tags="" position="250,1375" size="100,100">全城最高的建筑是什么
 [[图书馆|坏问题八]]
 [[天文台|不存在之地2]]
@@ -568,10 +576,12 @@ document.addEventListener(&#39;click&#39;, function() {
   月亮
 &lt;/div&gt;
 &lt;script&gt;
-document.getElementById(&#39;glowing-text&#39;).addEventListener(&#39;click&#39;, function() {
-  this.style.opacity = &#39;0&#39;;
-  setTimeout(() =&gt; this.remove(), 500); // 500毫秒后完全移除
-});
+if(document.getElementById(&#39;glowing-text&#39;)){
+  document.getElementById(&#39;glowing-text&#39;).addEventListener(&#39;click&#39;, function() {
+    this.style.opacity = &#39;0&#39;;
+    setTimeout(() =&gt; this.remove(), 500); // 500毫秒后完全移除
+  });
+}
 &lt;/script&gt;</tw-passagedata><tw-passagedata pid="40" name="结局4分支" tags="" position="550,1100" size="100,100">虽然答案没错，但是用已知条件回答问题可不能算作答案
 再好好想一下
 [[重新回答|结局4]]</tw-passagedata><tw-passagedata pid="41" name="好结局5" tags="" position="375,1300" size="100,100">理性国是一个什么样的国家
@@ -618,25 +628,26 @@ document.getElementById(&#39;glowing-text&#39;).addEventListener(&#39;click&#39;
 &lt;script&gt;
   let currentParagraph = 1;
   const paragraphs = document.querySelectorAll(&#39;#text-container p&#39;);
-  
-  document.getElementById(&#39;text-container&#39;).addEventListener(&#39;click&#39;, function() {
-    if (currentParagraph &lt; paragraphs.length) {
-      // 隐藏当前段落
-      if (currentParagraph &gt; 0) {
-        paragraphs[currentParagraph - 1].style.display = &#39;none&#39;;
+  if(document.getElementById(&#39;text-container&#39;)){
+    document.getElementById(&#39;text-container&#39;).addEventListener(&#39;click&#39;, function() {
+      if (currentParagraph &lt; paragraphs.length) {
+        // 隐藏当前段落
+        if (currentParagraph &gt; 0) {
+          paragraphs[currentParagraph - 1].style.display = &#39;none&#39;;
+        }
+        
+        // 显示下一段落
+        paragraphs[currentParagraph].style.display = &#39;block&#39;;
+        currentParagraph++;
+        
+        // 如果是最后一段，移除点击事件
+        if (currentParagraph === paragraphs.length) {
+          this.style.cursor = &#39;default&#39;;
+          this.removeEventListener(&#39;click&#39;, arguments.callee);
+        }
       }
-      
-      // 显示下一段落
-      paragraphs[currentParagraph].style.display = &#39;block&#39;;
-      currentParagraph++;
-      
-      // 如果是最后一段，移除点击事件
-      if (currentParagraph === paragraphs.length) {
-        this.style.cursor = &#39;default&#39;;
-        this.removeEventListener(&#39;click&#39;, arguments.callee);
-      }
-    }
-  });
+    });
+  }
 &lt;/script&gt;</tw-passagedata><tw-passagedata pid="46" name="坏结局9" tags="" position="250,1750" size="100,100">青绿色的鹦鹉是什么
 
 
@@ -653,6 +664,7 @@ document.getElementById(&#39;glowing-text&#39;).addEventListener(&#39;click&#39;
 &lt;/style&gt;
 &lt;span id=&quot;clickTarget&quot;&gt;它所说皆为月■＆*旨意&lt;/span&gt;
 &lt;script&gt;
+if(document.getElementById(&quot;clickTarget&quot;)){
   document.getElementById(&quot;clickTarget&quot;).addEventListener(&quot;click&quot;, function() {
     if (!this.dataset.triggered) { // 防止重复触发
       this.dataset.triggered = true;
@@ -665,6 +677,7 @@ document.getElementById(&#39;glowing-text&#39;).addEventListener(&#39;click&#39;
       }, 2000);
     }
   });
+}
 &lt;/script&gt;</tw-passagedata><tw-passagedata pid="47" name="坏结局10" tags="" position="250,1875" size="100,100">月亮是什么
 
 &lt;div id=&quot;text-container&quot; style=&quot;cursor: pointer;&quot;&gt;
@@ -678,25 +691,26 @@ document.getElementById(&#39;glowing-text&#39;).addEventListener(&#39;click&#39;
 &lt;script&gt;
   let currentParagraph = 1;
   const paragraphs = document.querySelectorAll(&#39;#text-container p&#39;);
-  
-  document.getElementById(&#39;text-container&#39;).addEventListener(&#39;click&#39;, function() {
-    if (currentParagraph &lt; paragraphs.length) {
-      // 隐藏当前段落
-      if (currentParagraph &gt; 0) {
-        paragraphs[currentParagraph - 1].style.display = &#39;none&#39;;
+  if(document.getElementById(&#39;text-container&#39;)){
+    document.getElementById(&#39;text-container&#39;).addEventListener(&#39;click&#39;, function() {
+      if (currentParagraph &lt; paragraphs.length) {
+        // 隐藏当前段落
+        if (currentParagraph &gt; 0) {
+          paragraphs[currentParagraph - 1].style.display = &#39;none&#39;;
+        }
+        
+        // 显示下一段落
+        paragraphs[currentParagraph].style.display = &#39;block&#39;;
+        currentParagraph++;
+        
+        // 如果是最后一段，移除点击事件
+        if (currentParagraph === paragraphs.length) {
+          this.style.cursor = &#39;default&#39;;
+          this.removeEventListener(&#39;click&#39;, arguments.callee);
+        }
       }
-      
-      // 显示下一段落
-      paragraphs[currentParagraph].style.display = &#39;block&#39;;
-      currentParagraph++;
-      
-      // 如果是最后一段，移除点击事件
-      if (currentParagraph === paragraphs.length) {
-        this.style.cursor = &#39;default&#39;;
-        this.removeEventListener(&#39;click&#39;, arguments.callee);
-      }
-    }
-  });
+    });
+  }
 &lt;/script&gt;</tw-passagedata><tw-passagedata pid="48" name="此地没有太阳" tags="" position="925,1475" size="100,100">理想国的上空恒久地悬挂着一轮满月，但不存在&lt;span id=&quot;glitch-text&quot; style=&quot;color: red; font-size: 24px; font-weight: bold;&quot;&gt;太阳&lt;/span&gt;
 &lt;script&gt;
   // 乱码字符集
@@ -712,13 +726,17 @@ document.getElementById(&#39;glowing-text&#39;).addEventListener(&#39;click&#39;
       for (let i = 0; i &lt; originalText.length; i++) {
         glitched += glitchChars.charAt(Math.floor(Math.random() * glitchChars.length));
       }
-      document.getElementById(&#39;glitch-text&#39;).textContent = glitched;
+      if(document.getElementById(&#39;glitch-text&#39;)){
+        document.getElementById(&#39;glitch-text&#39;).textContent = glitched;
+      }
       
       // 5次乱码后消失
       glitchCount++;
       if (glitchCount &gt; 5) {
         clearInterval(glitchInterval);
-        document.getElementById(&#39;glitch-text&#39;).style.display = &#39;none&#39;;
+        if(document.getElementById(&#39;glitch-text&#39;)){
+          document.getElementById(&#39;glitch-text&#39;).style.display = &#39;none&#39;;
+        }
       }
     }, 100); // 每0.1秒变化一次
   }
@@ -743,28 +761,40 @@ document.getElementById(&#39;glowing-text&#39;).addEventListener(&#39;click&#39;
   function showNextText() {
     // 隐藏当前文本
     if (currentText &gt; 0) {
-      document.getElementById(`text-${currentText}`).style.display = &#39;none&#39;;
+      if(document.getElementById(`text-${currentText}`)){
+        document.getElementById(`text-${currentText}`).style.display = &#39;none&#39;;
+      }
     }
     
     // 显示下一段文本
     currentText++;
     if (currentText &lt;= totalTexts) {
-      document.getElementById(`text-${currentText}`).style.display = &#39;block&#39;;
+      if(document.getElementById(`text-${currentText}`)){
+        document.getElementById(`text-${currentText}`).style.display = &#39;block&#39;;
+      }
     }
     
     // 如果是最后一段，移除点击事件
     if (currentText === totalTexts) {
-      document.getElementById(&#39;text-container&#39;).style.cursor = &#39;default&#39;;
-      document.getElementById(&#39;text-container&#39;).removeEventListener(&#39;click&#39;, showNextText);
+      if(document.getElementById(&#39;text-container&#39;)){
+        document.getElementById(&#39;text-container&#39;).style.cursor = &#39;default&#39;;
+      }
+      if(document.getElementById(&#39;text-container&#39;)){
+        document.getElementById(&#39;text-container&#39;).removeEventListener(&#39;click&#39;, showNextText);
+      }
     }
   }
   
   // 初始化显示第一段
-  document.getElementById(&#39;text-1&#39;).style.display = &#39;block&#39;;
+  if(document.getElementById(&#39;text-1&#39;)){
+    document.getElementById(&#39;text-1&#39;).style.display = &#39;block&#39;;
+  }
   currentText = 1;
   
   // 添加点击事件
-  document.getElementById(&#39;text-container&#39;).addEventListener(&#39;click&#39;, showNextText);
+  if(document.getElementById(&#39;text-container&#39;)){
+    document.getElementById(&#39;text-container&#39;).addEventListener(&#39;click&#39;, showNextText);
+  }
 &lt;/script&gt;</tw-passagedata><tw-passagedata pid="50" name="你不是他" tags="" position="925,1725" size="100,100">&lt;span style=&quot;color: white; text-shadow: 0 0 5px white, 0 0 10px white; font-size: 24px;&quot;&gt;
   月亮
 &lt;/span&gt;
