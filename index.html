@@ -977,82 +977,83 @@ end
 
 
 [[回答它|我怜悯你]]</tw-passagedata><tw-passagedata pid="61" name="我怜悯你" tags="" position="1075,2875" size="100,100">&lt;div id=&quot;input-container&quot; style=&quot;text-align: center;&quot;&gt;
-  &lt;span style=&quot;color: red; font-size: 24px;&quot;&gt;我&lt;/span&gt;
-  &lt;input type=&quot;text&quot; id=&quot;fill-input&quot; style=&quot;
-    width: 100px;
-    font-size: 24px;
-    text-align: center;
-    border: none;
-    border-bottom: 2px solid red;
-    background: transparent;
-    outline: none;
-    color: red;
-  &quot; placeholder=&quot;_&quot;&gt;
-  &lt;span style=&quot;color: red; font-size: 24px;&quot;&gt;你&lt;/span&gt;
-  &lt;br&gt;
-  &lt;small style=&quot;color: #666;&quot;&gt;输入完成后按回车确认&lt;/small&gt;
+    &lt;span style=&quot;color: red; font-size: 24px;&quot;&gt;我&lt;/span&gt;
+    &lt;input type=&quot;text&quot; id=&quot;fill-input&quot; style=&quot;
+      width: 100px;
+      font-size: 24px;
+      text-align: center;
+      border: none;
+      border-bottom: 2px solid red;
+      background: transparent;
+      outline: none;
+      color: red;
+    &quot; placeholder=&quot;_&quot;&gt;
+    &lt;span style=&quot;color: red; font-size: 24px;&quot;&gt;你&lt;/span&gt;
+    &lt;br&gt;
+    &lt;small style=&quot;color: #666;&quot;&gt;输入完成后按回车确认&lt;/small&gt;
 &lt;/div&gt;
 &lt;div id=&quot;result-container&quot; style=&quot;display: none;&quot;&gt;&lt;/div&gt;
 &lt;script&gt;
-  const inputField = document.getElementById(&#39;fill-input&#39;);
-  const resultContainer = document.getElementById(&#39;result-container&#39;);
-  const inputContainer = document.getElementById(&#39;input-container&#39;);
-  inputField.addEventListener(&#39;keypress&#39;, function(e) {
-    if (e.key === &#39;Enter&#39;) {
-      const inputValue = this.value.trim();
-      
-      // 隐藏输入界面
-      inputContainer.style.display = &#39;none&#39;;
-      resultContainer.style.display = &#39;block&#39;;
-      
-      if (inputValue === &#39;怜悯&#39;) {
-        resultContainer.innerHTML = `
-          &lt;div style=&quot;color: #333; font-size: 16px; line-height: 1.6; text-align: left; max-width: 600px; margin: 0 auto;&quot;&gt;
-            &lt;p&gt;向太阳般闪耀的苏丹致意：&lt;/p&gt;
-            &lt;p&gt;如果您能看到这封信，那说明我已经走向了结局&lt;/p&gt;
-            &lt;p&gt;我未曾想过能在那一日后与您再次相会，即便只是哪怕转瞬一逝的一秒，但是您看到了这封信，我相信他只能被&quot;阿■图&quot;打开，也只能由您亲自打开&lt;/p&gt;
-            &lt;p&gt;陛下&lt;/p&gt;
-            &lt;p&gt;在您■■之后，帝国一切欣欣向荣，我一直朝你我当初讨论的轨道上前进着，我相信我，我们现在离那个未来是接近的了，阿■图，我早就知道你可以……你可以改变这个国家，也只有你&lt;/p&gt;
-            &lt;p&gt;我已经为自己规划好了结局，这个国家不应该再被月亮笼罩，它应该迎来真正的朝阳，尽管这是痛苦的，是艰难的，但我相信他们，相信我们的孩子们，我总是相信他们能够做出正确的选择，即便这需要用我的鲜血来浇灌&lt;/p&gt;
-            &lt;p&gt;陛下&lt;/p&gt;
-            &lt;p&gt;陛下，我希望你能看见这一切，陛下&lt;/p&gt;
-            &lt;p&gt;我会等你&lt;/p&gt;
-            &lt;p&gt;我在等你&lt;/p&gt;
-            &lt;p&gt;我并不惧怕结局的到来，我相信那不会疼痛，我清楚的记得那把箭上面的每一个名字，是我用法术将他们从灵界唤回，而我也将引领他们回到他们本应所处的安息之地&lt;/p&gt;
-            &lt;p&gt;陛下，我很幸福&lt;/p&gt;
-            &lt;p style=&quot;text-align: right;&quot;&gt;您的维齐尔&lt;/p&gt;
-            &lt;p style=&quot;text-align: right;&quot;&gt;■■■&lt;/p&gt;
-          &lt;/div&gt;
-        `;
-      } 
-      else if ([&#39;超市&#39;, &#39;纵欲&#39;, &#39;草死&#39;].includes(inputValue)) {
-        resultContainer.innerHTML = `
-          &lt;div style=&quot;color: #333; font-size: 16px; line-height: 1.6; text-align: center;&quot;&gt;
-            &lt;p&gt;没有回应&lt;/p&gt;
-            &lt;p&gt;你只听见一声轻微的叹息&lt;/p&gt;
-            &lt;p&gt;月亮闪烁了两下最后的余辉，你眼睁睁的看着那卷书信无火自燃，当你抓住时只剩一缕青烟擦过你的手心&lt;/p&gt;
-            &lt;p&gt;你想知道他到底留下了什么，他到底要说什么？&lt;/p&gt;
-            &lt;p style=&quot;color: white; text-shadow: 0 0 5px white, 0 0 10px #7ec0ee, 0 0 20px #add8e6;&quot;&gt;
-              但你再也不会知道了
+    const inputField = document.getElementById(&#39;fill-input&#39;);
+    const resultContainer = document.getElementById(&#39;result-container&#39;);
+    const inputContainer = document.getElementById(&#39;input-container&#39;);
+    inputField.addEventListener(&#39;keypress&#39;, function (e) {
+        if (e.key === &#39;Enter&#39;) {
+            const inputValue = this.value.trim();
+
+            // 隐藏输入界面
+            inputContainer.style.display = &#39;none&#39;;
+            resultContainer.style.display = &#39;block&#39;;
+
+            if (inputValue === &#39;怜悯&#39;) {
+                resultContainer.innerHTML = `
+            &lt;div style=&quot;color: #333; font-size: 16px; line-height: 1.6; text-align: left; max-width: 600px; margin: 0 auto;&quot;&gt;
+              &lt;p&gt;向太阳般闪耀的苏丹致意：&lt;/p&gt;
+              &lt;p&gt;如果您能看到这封信，那说明我已经走向了结局&lt;/p&gt;
+              &lt;p&gt;我未曾想过能在那一日后与您再次相会，即便只是哪怕转瞬一逝的一秒，但是您看到了这封信，我相信他只能被&quot;阿■图&quot;打开，也只能由您亲自打开&lt;/p&gt;
+              &lt;p&gt;陛下&lt;/p&gt;
+              &lt;p&gt;在您■■之后，帝国一切欣欣向荣，我一直朝你我当初讨论的轨道上前进着，我相信我，我们现在离那个未来是接近的了，阿■图，我早就知道你可以……你可以改变这个国家，也只有你&lt;/p&gt;
+              &lt;p&gt;我已经为自己规划好了结局，这个国家不应该再被月亮笼罩，它应该迎来真正的朝阳，尽管这是痛苦的，是艰难的，但我相信他们，相信我们的孩子们，我总是相信他们能够做出正确的选择，即便这需要用我的鲜血来浇灌&lt;/p&gt;
+              &lt;p&gt;陛下&lt;/p&gt;
+              &lt;p&gt;陛下，我希望你能看见这一切，陛下&lt;/p&gt;
+              &lt;p&gt;我会等你&lt;/p&gt;
+              &lt;p&gt;我在等你&lt;/p&gt;
+              &lt;p&gt;我并不惧怕结局的到来，我相信那不会疼痛，我清楚的记得那把箭上面的每一个名字，是我用法术将他们从灵界唤回，而我也将引领他们回到他们本应所处的安息之地&lt;/p&gt;
+              &lt;p&gt;陛下，我很幸福&lt;/p&gt;
+              &lt;p style=&quot;text-align: right;&quot;&gt;您的维齐尔&lt;/p&gt;
+              &lt;p style=&quot;text-align: right;&quot;&gt;■■■&lt;/p&gt;
+            &lt;/div&gt;
+          `;
+            }
+            else if ([&#39;超市&#39;, &#39;纵欲&#39;, &#39;草死&#39;].includes(inputValue)) {
+                document.querySelector(&#39;[title=&quot;Undo&quot;]&#39;)?.remove();
+                resultContainer.innerHTML = `
+            &lt;div style=&quot;color: #333; font-size: 16px; line-height: 1.6; text-align: center;&quot;&gt;
+              &lt;p&gt;没有回应&lt;/p&gt;
+              &lt;p&gt;你只听见一声轻微的叹息&lt;/p&gt;
+              &lt;p&gt;月亮闪烁了两下最后的余辉，你眼睁睁的看着那卷书信无火自燃，当你抓住时只剩一缕青烟擦过你的手心&lt;/p&gt;
+              &lt;p&gt;你想知道他到底留下了什么，他到底要说什么？&lt;/p&gt;
+              &lt;p style=&quot;color: white; text-shadow: 0 0 5px white, 0 0 10px #7ec0ee, 0 0 20px #add8e6;&quot;&gt;
+                但你再也不会知道了
+              &lt;/p&gt;
+              &lt;p&gt;它消失了&lt;/p&gt;
+              &lt;p style=&quot;color:red; font-weight: bold;&quot;&gt;隐藏结局：连黑月都赞叹你的色心&lt;/p&gt;
+            &lt;/div&gt;
+          `;
+            }
+            else {
+                resultContainer.innerHTML = `
+            &lt;p style=&quot;color: #666; font-size: 18px;&quot;&gt;
+              你输入了：${inputValue || &quot;空内容&quot;}
             &lt;/p&gt;
-            &lt;p&gt;它消失了&lt;/p&gt;
-            &lt;p style=&quot;color:red; font-weight: bold;&quot;&gt;隐藏结局：连黑月都赞叹你的色心&lt;/p&gt;
-          &lt;/div&gt;
-        `;
-      }
-      else {
-        resultContainer.innerHTML = `
-          &lt;p style=&quot;color: #666; font-size: 18px;&quot;&gt;
-            你输入了：${inputValue || &quot;空内容&quot;}
-          &lt;/p&gt;
-        `;
-      }
-    }
-  });
-  // 自动聚焦输入框
-  setTimeout(() =&gt; {
-    inputField.focus();
-  }, 500);
+          `;
+            }
+        }
+    });
+    // 自动聚焦输入框
+    setTimeout(() =&gt; {
+        inputField.focus();
+    }, 500);
 &lt;/script&gt;</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
