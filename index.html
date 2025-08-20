@@ -990,7 +990,7 @@ end
     &quot; placeholder=&quot;_&quot;&gt;
     &lt;span style=&quot;color: red; font-size: 24px;&quot;&gt;你&lt;/span&gt;
     &lt;br&gt;
-    &lt;small style=&quot;color: #666;&quot;&gt;输入完成后按回车确认&lt;/small&gt;
+    &lt;small style=&quot;color: #666;&quot;&gt;按回车确认&lt;/small&gt;
 &lt;/div&gt;
 &lt;div id=&quot;result-container&quot; style=&quot;display: none;&quot;&gt;&lt;/div&gt;
 &lt;script&gt;
@@ -1026,27 +1026,44 @@ end
           `;
             }
             else if ([&#39;超市&#39;, &#39;纵欲&#39;, &#39;草死&#39;].includes(inputValue)) {
-                document.querySelector(&#39;[title=&quot;Undo&quot;]&#39;)?.remove();
+                // document.querySelector(&#39;[title=&quot;Undo&quot;]&#39;)?.remove();
+                if (document.querySelector(&#39;[title=&quot;Undo&quot;]&#39;))
+                    document.querySelector(&#39;[title=&quot;Undo&quot;]&#39;).style.display = &quot;none&quot;;
                 resultContainer.innerHTML = `
-            &lt;div style=&quot;color: #333; font-size: 16px; line-height: 1.6; text-align: center;&quot;&gt;
-              &lt;p&gt;没有回应&lt;/p&gt;
-              &lt;p&gt;你只听见一声轻微的叹息&lt;/p&gt;
-              &lt;p&gt;月亮闪烁了两下最后的余辉，你眼睁睁的看着那卷书信无火自燃，当你抓住时只剩一缕青烟擦过你的手心&lt;/p&gt;
-              &lt;p&gt;你想知道他到底留下了什么，他到底要说什么？&lt;/p&gt;
-              &lt;p style=&quot;color: white; text-shadow: 0 0 5px white, 0 0 10px #7ec0ee, 0 0 20px #add8e6;&quot;&gt;
-                但你再也不会知道了
-              &lt;/p&gt;
-              &lt;p&gt;它消失了&lt;/p&gt;
-              &lt;p style=&quot;color:red; font-weight: bold;&quot;&gt;隐藏结局：连黑月都赞叹你的色心&lt;/p&gt;
-            &lt;/div&gt;
-          `;
+                &lt;div style=&quot;color: #333; font-size: 16px; line-height: 1.6; text-align: center;&quot;&gt;
+                    &lt;p&gt;没有回应&lt;/p&gt;
+                    &lt;p&gt;你只听见一声轻微的叹息&lt;/p&gt;
+                    &lt;p&gt;月亮闪烁了两下最后的余辉，你眼睁睁的看着那卷书信无火自燃，当你抓住时只剩一缕青烟擦过你的手心&lt;/p&gt;
+                    &lt;p&gt;你想知道他到底留下了什么，他到底要说什么？&lt;/p&gt;
+                    &lt;p style=&quot;color: white; text-shadow: 0 0 5px white, 0 0 10px #7ec0ee, 0 0 20px #add8e6;&quot;&gt;
+                        但你再也不会知道了
+                    &lt;/p&gt;
+                    &lt;p&gt;它消失了&lt;/p&gt;
+                    &lt;p style=&quot;color:red; font-weight: bold;&quot;&gt;隐藏结局：连黑月都赞叹你的色心&lt;/p&gt;
+                &lt;/div&gt;`;
+            }
+            else if (inputValue === &#39;爱&#39;) {
+                resultContainer.innerHTML =
+                    `&lt;div style=&quot;color: #333; line-height: 1.6;&quot;&gt;
+                    &lt;p&gt;有苍白的风从你耳畔拂过，你听见融在风里的低喃，一声低沉的叹息从耳边扫过。&lt;/p&gt;
+                    &lt;p&gt;&quot;我知道&quot;&lt;/p&gt;
+                    &lt;p&gt;风擦过了你的额头&lt;/p&gt;
+                    &lt;span id=&quot;fade-text&quot; style=&quot;color: white; text-shadow: 0 0 10px white; display: inline-block;&quot;&gt;
+                        回去吧，不必记得我
+                    &lt;/span&gt;
+                    &lt;p&gt;雾一般的声音散去了，月亮静静的悬在天上，周围没有风，没有人，一切只是你短暂的错觉而已。&lt;/p&gt;
+                    &lt;p&gt;信卷发出轻轻的摩擦声&lt;/p&gt;
+                    &lt;p&gt;它落在地上，不会再做出回应&lt;/p&gt;
+                &lt;/div&gt;`;
+                setTimeout(() =&gt; {
+                    if (document.getElementById(&#39;fade-text&#39;)) {
+                        document.getElementById(&#39;fade-text&#39;).style.opacity = &#39;0&#39;;
+                        document.getElementById(&#39;fade-text&#39;).style.transition = &#39;opacity 1s&#39;;
+                    }
+                }, 2000);
             }
             else {
-                resultContainer.innerHTML = `
-            &lt;p style=&quot;color: #666; font-size: 18px;&quot;&gt;
-              你输入了：${inputValue || &quot;空内容&quot;}
-            &lt;/p&gt;
-          `;
+                resultContainer.innerHTML = `&lt;p style=&quot;color: #333;&quot;&gt;那封信在你的手中无火自燃……月光在你的视野之中投下清亮亮的一片白色，一如理想国的既往。&lt;/p&gt;`;
             }
         }
     });
