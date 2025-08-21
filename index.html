@@ -1062,6 +1062,44 @@ end
                     }
                 }, 2000);
             }
+            else if (inputValue === &#39;等&#39;) {
+                resultContainer.innerHTML = `
+                &lt;div style=&quot;color: #333; font-size: 16px; line-height: 1.6; text-align: center;&quot;&gt;
+                    &lt;p&gt;信纸发出沙沙的声响，未曾给予回应&lt;/p&gt;
+                    &lt;p&gt;你感觉有一阵风吹过&lt;/p&gt;
+                    &lt;p&gt;苍白的风撞进你的怀里，而你从云端之中跌落。&lt;/p&gt;
+                    &lt;p&gt;谁人的呓语，来自死黑的河。&lt;/p&gt;
+                    &lt;span style=&quot;color: white; text-shadow: 0 0 5px white, 0 0 10px white; font-size: 24px;&quot;&gt;
+                                我在这里
+                    &lt;/span&gt;
+                    &lt;p&gt;请忘记吧&lt;/p&gt;
+                &lt;/div&gt;
+                `;
+            }
+            else if ([&#39;厌恶&#39;, &#39;讨厌&#39;].includes(inputValue)) {
+                resultContainer.innerHTML = `
+                &lt;div style=&quot;color: #333; font-size: 16px; line-height: 1.6; text-align: center;&quot;&gt;
+                    &lt;p&gt;本应如此，理所应当。&lt;/p&gt;
+                    &lt;p&gt;因为这正是我的归途。&lt;/p&gt;
+                    &lt;p&gt;那封信在你的手中无火自燃……月光在你的视野之中投下清亮亮的一片白色，一如理想国的既往。&lt;/p&gt;
+                &lt;/div&gt;
+                `;
+            }
+            else if (inputValue === &#39;要上&#39;) {
+                resultContainer.innerHTML = `
+                &lt;div style=&quot;color: #333; font-size: 16px; line-height: 1.6; text-align: center;&quot;&gt;
+                    &lt;p&gt;信纸燃烧起来……你抬起头，透过火光，茫然地注视着面前那盈满月光的荒野。最后，你迈出步伐。草浪在你的身边荡开，发出柔顺的沙沙声响，如同一望无际，古老而静谧的海洋。&lt;/p&gt;
+                    &lt;p&gt;你知道，你将要到月亮上去。&lt;/p&gt;
+                    &lt;p&gt;……&lt;/p&gt;
+                    &lt;p&gt;&quot;卡！&quot;&lt;/p&gt;
+                    &lt;p&gt;导演大喊一声，奈费勒从地上爬起来，顺手捡起地上的黑纱，一边小心翼翼地避开地上黏糊糊的人造血浆，一边笑着看向还没从刚刚的情绪里走出来的你。而同事们已经捧着杀青蛋糕走来，你笑了起来，和他们一起吹灭蜡烛，欢呼着留下影片花絮。&lt;/p&gt;
+                    &lt;p&gt;也许，一切不过是摄影棚里虚假的演出，正如那枚此刻正被奈费勒捧在手里的塑料月亮。&lt;/p&gt;
+                    &lt;p&gt;不过这一切和你有什么关系呢，我的楚门？&lt;/p&gt;
+                    &lt;p&gt;现在，享受你的杀青宴吧，大明星！&lt;/p&gt;
+                    &lt;p style=&quot;color:red; font-weight: bold;&quot;&gt;结局：摄影棚的月亮&lt;/p&gt;
+                &lt;/div&gt;
+                `;
+            }
             else {
                 resultContainer.innerHTML = `&lt;p style=&quot;color: #333;&quot;&gt;那封信在你的手中无火自燃……月光在你的视野之中投下清亮亮的一片白色，一如理想国的既往。&lt;/p&gt;`;
             }
