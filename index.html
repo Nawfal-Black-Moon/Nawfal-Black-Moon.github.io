@@ -8,7 +8,7 @@
 
 <body>
     <div class="title">
-        <h1>欢迎来到理想国</h1>
+        <h1>欢迎来到 理想国</h1>
     </div>
     <div class="eye">
         <svg width="300" height="150" xmlns="http://www.w3.org/2000/svg">
@@ -57,7 +57,7 @@
                     </feMerge>
                 </filter>
             </defs>
-            
+
             <path d="M 15 75 C 75 0, 225 0, 285 75 C 225 150, 75 150, 15 75 Z" fill="black" stroke="white"
                 stroke-width="5" filter="url(#eyeGlowShadow)" />
 
@@ -78,6 +78,30 @@
 </html>
 
 <style>
+    @font-face {
+        font-family: "MyCustomFont";
+        src: url("./assets/font/白无常可可体常规.ttf") format("truetype");
+        font-weight: 400;
+        /* normal */
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: "MyCustomFont";
+        src: url("./assets/font/白无常可可体粗.ttf") format("truetype");
+        font-weight: 700;
+        /* bold */
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: "汇文明朝体";
+        src: url("./assets/font/汇文明朝体.otf") format("opentype");
+        font-weight: 700;
+        /* bold */
+        font-style: normal;
+    }
+
     body {
         margin: 0;
         height: 100vh;
@@ -90,20 +114,21 @@
     }
 
     .title {
-        margin-top: 40px;
+        margin-top: 2%;
         color: white;
-        font-family: "SimSun", 宋体, serif;
+        font-family: "汇文明朝体", sans-serif;
+        font-size: 40px;
         text-align: center;
     }
 
     .eye {
-        margin-top: 100px;
+        margin-top: 5%;
         width: 300px;
         height: 150px;
     }
 
     .links {
-        margin-top: 100px;
+        margin-top: 10%;
         display: flex;
         justify-content: center;
         gap: 50px;
@@ -113,9 +138,9 @@
         width: 200px;
         height: 75px;
         padding: 20px 32px;
-        font-size: 22px;
-        font-family: "SimSun", 宋体, serif;
-        font-weight: bold;
+        font-size: 25px;
+        font-family: "汇文明朝体", sans-serif;
+        font-weight: 700;
         color: white;
         border: none;
         border-radius: 999px;
@@ -136,13 +161,13 @@
     .pill.red {
         background: linear-gradient(to right, rgb(255, 255, 255) 50%, #ff3333 50%);
         text-align: right;
-        padding-right: 20px;
+        padding-right: 15px;
     }
 
     .pill.blue {
         background: linear-gradient(to left, rgb(255, 255, 255) 50%, #3399ff 50%);
         text-align: left;
-        padding-left: 5px;
+        padding-left: 0px;
     }
 </style>
 
