@@ -79,28 +79,19 @@
 
 <style>
     @font-face {
-        font-family: "MyCustomFont";
-        src: url("./assets/font/白无常可可体常规.ttf") format("truetype");
-        font-weight: 400;
+        font-family: "桃花源";
+        src: url("./assets/font/HYJieLongTaoHuaYuanW-2.ttf") format("truetype");
+        font-weight: 100;
         /* normal */
         font-style: normal;
     }
 
-    @font-face {
-        font-family: "MyCustomFont";
-        src: url("./assets/font/白无常可可体粗.ttf") format("truetype");
-        font-weight: 700;
-        /* bold */
-        font-style: normal;
-    }
-
-    @font-face {
+    /* @font-face {
         font-family: "汇文明朝体";
         src: url("./assets/font/汇文明朝体.otf") format("opentype");
         font-weight: 700;
-        /* bold */
         font-style: normal;
-    }
+    } */
 
     body {
         margin: 0;
@@ -113,10 +104,17 @@
         justify-content: flex-start;
     }
 
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
     .title {
         margin-top: 5vh;
         color: white;
-        font-family: "汇文明朝体", sans-serif;
+        font-family: "桃花源", sans-serif;
         font-size: 40px;
         text-align: center;
     }
@@ -131,7 +129,7 @@
         margin-top: 20vh;
         display: flex;
         justify-content: center;
-        gap: 50px;
+        gap: 20vh;
     }
 
     .pill {
@@ -139,8 +137,7 @@
         height: 75px;
         padding: 20px 32px;
         font-size: 25px;
-        font-family: "汇文明朝体", sans-serif;
-        font-weight: 700;
+        font-family: "桃花源", sans-serif;
         color: white;
         border: none;
         border-radius: 999px;
