@@ -10,63 +10,65 @@
     <div class="title">
         <h1>欢迎来到 理想国</h1>
     </div>
-    <div class="eye">
-        <svg width="300" height="150" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-                <!-- 眼白clipPath -->
-                <clipPath id="eyeClip">
-                    <path d="M 15 75 C 75 0, 225 0, 285 75 C 225 150, 75 150, 15 75 Z" />
-                </clipPath>
+    <div class="container">
+        <div class="eye">
+            <svg width="300" height="150" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <!-- 眼白clipPath -->
+                    <clipPath id="eyeClip">
+                        <path d="M 15 75 C 75 0, 225 0, 285 75 C 225 150, 75 150, 15 75 Z" />
+                    </clipPath>
 
-                <!-- 虹膜外发光 -->
-                <filter id="irisShadow" x="-50%" y="-50%" width="200%" height="200%">
-                    <feGaussianBlur in="SourceAlpha" stdDeviation="12" result="blur" />
-                    <feFlood flood-color="rgb(228,228,228)" result="color" />
-                    <feComposite in="color" in2="blur" operator="in" result="shadow" />
-                    <feMerge>
-                        <feMergeNode in="shadow" />
-                        <feMergeNode in="SourceGraphic" />
-                    </feMerge>
-                </filter>
+                    <!-- 虹膜外发光 -->
+                    <filter id="irisShadow" x="-50%" y="-50%" width="200%" height="200%">
+                        <feGaussianBlur in="SourceAlpha" stdDeviation="12" result="blur" />
+                        <feFlood flood-color="rgb(228,228,228)" result="color" />
+                        <feComposite in="color" in2="blur" operator="in" result="shadow" />
+                        <feMerge>
+                            <feMergeNode in="shadow" />
+                            <feMergeNode in="SourceGraphic" />
+                        </feMerge>
+                    </filter>
 
-                <!-- 瞳孔内发光 -->
-                <filter id="pupilGlow" x="-50%" y="-50%" width="200%" height="200%">
-                    <feFlood flood-color="white" flood-opacity="0.9" result="flood" />
-                    <feComposite in="flood" in2="SourceAlpha" operator="in" result="mask" />
-                    <feGaussianBlur in="mask" stdDeviation="4" result="blur" />
-                    <feComposite in="SourceGraphic" in2="blur" operator="over" />
-                </filter>
+                    <!-- 瞳孔内发光 -->
+                    <filter id="pupilGlow" x="-50%" y="-50%" width="200%" height="200%">
+                        <feFlood flood-color="white" flood-opacity="0.9" result="flood" />
+                        <feComposite in="flood" in2="SourceAlpha" operator="in" result="mask" />
+                        <feGaussianBlur in="mask" stdDeviation="4" result="blur" />
+                        <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                    </filter>
 
-                <!-- 虹膜渐变 -->
-                <radialGradient id="irisGradient" cx="30%" cy="30%" r="70%">
-                    <stop offset="0%" stop-color="white" />
-                    <stop offset="100%" stop-color="gray" />
-                </radialGradient>
-            </defs>
+                    <!-- 虹膜渐变 -->
+                    <radialGradient id="irisGradient" cx="30%" cy="30%" r="70%">
+                        <stop offset="0%" stop-color="white" />
+                        <stop offset="100%" stop-color="gray" />
+                    </radialGradient>
+                </defs>
 
-            <!-- 眼白 -->
-            <defs>
-                <filter id="eyeGlowShadow" x="-50%" y="-50%" width="200%" height="200%">
-                    <feGaussianBlur in="SourceAlpha" stdDeviation="15" result="blur" />
-                    <feFlood flood-color="white" flood-opacity="1" result="color" />
-                    <feComposite in="color" in2="blur" operator="in" result="glow" />
-                    <feDropShadow dx="2" dy="2" stdDeviation="2" flood-color="#666" flood-opacity="0.5" />
-                    <feMerge>
-                        <feMergeNode in="glow" />
-                        <feMergeNode in="SourceGraphic" />
-                    </feMerge>
-                </filter>
-            </defs>
+                <!-- 眼白 -->
+                <defs>
+                    <filter id="eyeGlowShadow" x="-50%" y="-50%" width="200%" height="200%">
+                        <feGaussianBlur in="SourceAlpha" stdDeviation="15" result="blur" />
+                        <feFlood flood-color="white" flood-opacity="1" result="color" />
+                        <feComposite in="color" in2="blur" operator="in" result="glow" />
+                        <feDropShadow dx="2" dy="2" stdDeviation="2" flood-color="#666" flood-opacity="0.5" />
+                        <feMerge>
+                            <feMergeNode in="glow" />
+                            <feMergeNode in="SourceGraphic" />
+                        </feMerge>
+                    </filter>
+                </defs>
 
-            <path d="M 15 75 C 75 0, 225 0, 285 75 C 225 150, 75 150, 15 75 Z" fill="black" stroke="white"
-                stroke-width="5" filter="url(#eyeGlowShadow)" />
+                <path d="M 15 75 C 75 0, 225 0, 285 75 C 225 150, 75 150, 15 75 Z" fill="black" stroke="white"
+                    stroke-width="5" filter="url(#eyeGlowShadow)" />
 
-            <!-- 虹膜+瞳孔 -->
-            <g id="irisGroup" clip-path="url(#eyeClip)">
-                <circle id="iris" cx="150" cy="75" r="50" fill="url(#irisGradient)" filter="url(#irisShadow)" />
-                <circle id="pupil" cx="150" cy="75" r="15" fill="black" filter="url(#pupilGlow)" />
-            </g>
-        </svg>
+                <!-- 虹膜+瞳孔 -->
+                <g id="irisGroup" clip-path="url(#eyeClip)">
+                    <circle id="iris" cx="150" cy="75" r="50" fill="url(#irisGradient)" filter="url(#irisShadow)" />
+                    <circle id="pupil" cx="150" cy="75" r="15" fill="black" filter="url(#pupilGlow)" />
+                </g>
+            </svg>
+        </div>
     </div>
 
     <div class="links">
@@ -108,7 +110,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 100vh;
+        height: 40vh;
     }
 
     .title {
@@ -125,7 +127,7 @@
     }
 
     .links {
-        margin-top: 20vh;
+        margin-top: 5vh;
         display: flex;
         justify-content: center;
         gap: 100px;
