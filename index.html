@@ -4,199 +4,188 @@
 <head>
     <meta charset="UTF-8" />
     <title>欢迎来到理想国</title>
+    <style>
+        @import url("https://fontsapi.zeoseven.com/237/main/result.css");
+
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            /* 上下排列 */
+            align-items: center;
+            /* 水平居中 */
+            background: radial-gradient(circle at center, #000 0%, #111 80%, #000 100%);
+            overflow: hidden;
+            padding: 5vh 0;
+            /* 上下留白 */
+        }
+
+        /* 标题居中 */
+        .title h1 {
+            margin: 0;
+            color: white;
+            font-family: "XiangcuiDazijitiW15", sans-serif;
+            font-size: 40px;
+            text-align: center;
+        }
+
+        /* 眼睛水平居中 */
+        .eye {
+            position: relative;
+            margin-top: 15vh;
+            width: 400px;
+            height: 200px;
+        }
+
+        /* 眼睛各元素 */
+        .eye img.eye-bg,
+        .eye img.eyeball,
+        .eye img.eye-close {
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .eye img.eyeball {
+            z-index: 2;
+            transition: transform 0.05s linear;
+        }
+
+        .eye img.eye-close {
+            z-index: 3;
+            display: none;
+        }
+
+        /* 底部按钮水平居中 */
+        .links {
+            display: flex;
+            margin-top: 30vh;
+            justify-content: center;
+            gap: 100px;
+        }
+
+        .pill {
+            width: 250px;
+            height: 90px;
+            padding: 20px 32px;
+            font-size: 28px;
+            font-family: "XiangcuiDazijitiW15", sans-serif;
+            color: white;
+            border: none;
+            border-radius: 999px;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: inset -2px -2px 6px rgba(255, 255, 255, 0.4),
+                inset 2px 2px 6px rgba(0, 0, 0, 0.4),
+                0 0 12px rgba(0, 0, 0, 0.6);
+        }
+
+        .pill:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.7),
+                inset -2px -2px 6px rgba(255, 255, 255, 0.5),
+                inset 2px 2px 6px rgba(0, 0, 0, 0.5);
+        }
+
+        .pill.red {
+            background: linear-gradient(to right, rgb(255, 255, 255) 50%, #ff3333 50%);
+            text-align: right;
+            padding-right: 20px;
+        }
+
+        .pill.blue {
+            background: linear-gradient(to left, rgb(255, 255, 255) 50%, #3399ff 50%);
+            text-align: left;
+            padding-left: 5px;
+        }
+    </style>
 </head>
 
 <body>
     <div class="title">
         <h1>欢迎来到 理想国</h1>
     </div>
-    <div class="container">
-        <div class="eye">
-            <svg width="300" height="150" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                    <!-- 眼白clipPath -->
-                    <clipPath id="eyeClip">
-                        <path d="M 15 75 C 75 0, 225 0, 285 75 C 225 150, 75 150, 15 75 Z" />
-                    </clipPath>
 
-                    <!-- 虹膜外发光 -->
-                    <filter id="irisShadow" x="-50%" y="-50%" width="200%" height="200%">
-                        <feGaussianBlur in="SourceAlpha" stdDeviation="12" result="blur" />
-                        <feFlood flood-color="rgb(228,228,228)" result="color" />
-                        <feComposite in="color" in2="blur" operator="in" result="shadow" />
-                        <feMerge>
-                            <feMergeNode in="shadow" />
-                            <feMergeNode in="SourceGraphic" />
-                        </feMerge>
-                    </filter>
-
-                    <!-- 瞳孔内发光 -->
-                    <filter id="pupilGlow" x="-50%" y="-50%" width="200%" height="200%">
-                        <feFlood flood-color="white" flood-opacity="0.9" result="flood" />
-                        <feComposite in="flood" in2="SourceAlpha" operator="in" result="mask" />
-                        <feGaussianBlur in="mask" stdDeviation="4" result="blur" />
-                        <feComposite in="SourceGraphic" in2="blur" operator="over" />
-                    </filter>
-
-                    <!-- 虹膜渐变 -->
-                    <radialGradient id="irisGradient" cx="30%" cy="30%" r="70%">
-                        <stop offset="0%" stop-color="white" />
-                        <stop offset="100%" stop-color="gray" />
-                    </radialGradient>
-                </defs>
-
-                <!-- 眼白 -->
-                <defs>
-                    <filter id="eyeGlowShadow" x="-50%" y="-50%" width="200%" height="200%">
-                        <feGaussianBlur in="SourceAlpha" stdDeviation="15" result="blur" />
-                        <feFlood flood-color="white" flood-opacity="1" result="color" />
-                        <feComposite in="color" in2="blur" operator="in" result="glow" />
-                        <feDropShadow dx="2" dy="2" stdDeviation="2" flood-color="#666" flood-opacity="0.5" />
-                        <feMerge>
-                            <feMergeNode in="glow" />
-                            <feMergeNode in="SourceGraphic" />
-                        </feMerge>
-                    </filter>
-                </defs>
-
-                <path d="M 15 75 C 75 0, 225 0, 285 75 C 225 150, 75 150, 15 75 Z" fill="black" stroke="white"
-                    stroke-width="5" filter="url(#eyeGlowShadow)" />
-
-                <!-- 虹膜+瞳孔 -->
-                <g id="irisGroup" clip-path="url(#eyeClip)">
-                    <circle id="iris" cx="150" cy="75" r="50" fill="url(#irisGradient)" filter="url(#irisShadow)" />
-                    <circle id="pupil" cx="150" cy="75" r="15" fill="black" filter="url(#pupilGlow)" />
-                </g>
-            </svg>
-        </div>
+    <div class="eye">
+        <img src="https://tupian.li/images/2025/09/11/68c1a3b32caf3.png" class="eye-bg" alt="眼眶">
+        <img src="https://tupian.li/images/2025/09/11/68c1a3ad08170.png" class="eyeball" alt="眼球" id="eyeball">
+        <img src="https://tupian.li/images/2025/09/11/68c1a59dc2c33.png" class="eye-close" alt="闭眼">
     </div>
 
     <div class="links">
         <button class="pill red" onclick="location.href='理想国.html'">理想国</button>
         <button class="pill blue">尚未公开</button>
     </div>
+
+    <script>
+        const eye = document.querySelector('.eye');
+        const eyeball = document.getElementById('eyeball');
+        const eyeClose = document.querySelector('.eye-close');
+
+        let eyeRect = eye.getBoundingClientRect();
+        let eyeCenter = {
+            x: eyeRect.left + eyeRect.width / 2,
+            y: eyeRect.top + eyeRect.height / 2
+        };
+
+        let blinkTimeout;   // 2秒不动计时
+        let blinkTimer;     // 眨眼0.5秒计时
+
+        function updateEye(e) {
+            resetBlinkTimer();
+
+            const dx = e.clientX - eyeCenter.x;
+            const dy = e.clientY - eyeCenter.y;
+
+            const maxXDist = 30;
+            const maxYDist = 30;
+
+            let x = dx / 10;
+            let y = dy / 10;
+
+            if (x > maxXDist) x = maxXDist;
+            if (x < -maxXDist) x = -maxXDist;
+            if (y > maxYDist) y = maxYDist;
+            if (y < -maxYDist) y = -maxYDist;
+
+            eyeball.style.transform = `translate(${x}px, ${y}px)`;
+        }
+
+        function showBlink() {
+            eyeClose.style.display = "block";
+            eyeball.style.display = "none";
+            // 0.5 秒后恢复
+            blinkTimer = setTimeout(hideBlink, 400);
+        }
+
+        function hideBlink() {
+            eyeClose.style.display = "none";
+            eyeball.style.display = "block";
+            blinkTimeout = setTimeout(showBlink, 3000);
+        }
+
+        function resetBlinkTimer() {
+            clearTimeout(blinkTimeout);
+            clearTimeout(blinkTimer);
+            hideBlink();
+        }
+
+        document.addEventListener('mousemove', updateEye);
+
+        document.addEventListener('touchmove', (e) => {
+            if (e.touches[0]) updateEye(e.touches[0]);
+        }, { passive: true });
+
+        window.addEventListener('resize', () => {
+            eyeRect = eye.getBoundingClientRect();
+            eyeCenter.x = eyeRect.left + eyeRect.width / 2;
+            eyeCenter.y = eyeRect.top + eyeRect.height / 2;
+        });
+
+        resetBlinkTimer();
+    </script>
 </body>
 
 </html>
-
-<style>
-    @import url("https://fontsapi.zeoseven.com/237/main/result.css");
-    
-    body {
-        margin: 0;
-        height: 100vh;
-        background: radial-gradient(circle at center, #000 0%, #111 80%, #000 100%);
-        overflow: hidden;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
-    }
-
-    .container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 40vh;
-    }
-
-    .title {
-        margin-top: 5vh;
-        color: white;
-        font-family: "XiangcuiDazijitiW15", sans-serif;
-        font-size: 40px;
-        text-align: center;
-    }
-
-    .eye {
-        width: 300px;
-        height: 150px;
-    }
-
-    .links {
-        margin-top: 5vh;
-        display: flex;
-        justify-content: center;
-        gap: 100px;
-    }
-
-    .pill {
-        width: 250px;
-        height: 90px;
-        padding: 20px 32px;
-        font-size: 28px;
-        font-family: "XiangcuiDazijitiW15", sans-serif;
-        color: white;
-        border: none;
-        border-radius: 999px;
-        cursor: pointer;
-        transition: transform 0.2s, box-shadow 0.2s;
-        box-shadow: inset -2px -2px 6px rgba(255, 255, 255, 0.4),
-            inset 2px 2px 6px rgba(0, 0, 0, 0.4),
-            0 0 12px rgba(0, 0, 0, 0.6);
-    }
-
-    .pill:hover {
-        transform: scale(1.1);
-        box-shadow: 0 0 20px rgba(255, 255, 255, 0.7),
-            inset -2px -2px 6px rgba(255, 255, 255, 0.5),
-            inset 2px 2px 6px rgba(0, 0, 0, 0.5);
-    }
-
-    .pill.red {
-        background: linear-gradient(to right, rgb(255, 255, 255) 50%, #ff3333 50%);
-        text-align: right;
-        padding-right: 20px;
-    }
-
-    .pill.blue {
-        background: linear-gradient(to left, rgb(255, 255, 255) 50%, #3399ff 50%);
-        text-align: left;
-        padding-left: 5px;
-    }
-</style>
-
-<script>
-    const svg = document.querySelector('.eye svg');
-    const iris = document.getElementById('iris');
-    const pupil = document.getElementById('pupil');
-
-    let eyeRect = svg.getBoundingClientRect();
-    let eyeCenter = {
-        x: eyeRect.left + eyeRect.width / 2,
-        y: eyeRect.top + eyeRect.height / 2
-    };
-
-    function updateEye(e) {
-        const dx = e.clientX - eyeCenter.x;
-        const dy = e.clientY - eyeCenter.y;
-
-        const maxXDist = 30;
-        const maxYDist = 15;
-
-        let x = dx / 10;
-        let y = dy / 10;
-
-        if (x > maxXDist) x = maxXDist;
-        if (x < -maxXDist) x = -maxXDist;
-        if (y > maxYDist) y = maxYDist;
-        if (y < -maxYDist) y = -maxYDist;
-
-        iris.setAttribute("cx", 150 + x);
-        iris.setAttribute("cy", 75 + y);
-        pupil.setAttribute("cx", 150 + x);
-        pupil.setAttribute("cy", 75 + y);
-    }
-
-    document.addEventListener('mousemove', updateEye);
-
-    document.addEventListener('touchmove', (e) => {
-        if (e.touches[0]) updateEye(e.touches[0]);
-    }, { passive: true });
-
-    window.addEventListener('resize', () => {
-        eyeRect = svg.getBoundingClientRect();
-        eyeCenter.x = eyeRect.left + eyeRect.width / 2;
-        eyeCenter.y = eyeRect.top + eyeRect.height / 2;
-    });
-</script>
