@@ -172,6 +172,49 @@
             hideBlink();
         }
 
+        // 设置 cookie
+        function setCookie(name, value, days) {
+            const d = new Date();
+            d.setTime(d.getTime() + (days * 24 * 60 * 60 * 1000)); // 默认几天有效
+            let expires = "expires=" + d.toUTCString();
+            document.cookie = name + "=" + value + ";" + expires + ";path=/";
+        }
+
+        // 获取 cookie
+        function getCookie(name) {
+            let cname = name + "=";
+            let ca = document.cookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i].trim();
+                if (c.indexOf(cname) === 0) return c.substring(cname.length, c.length);
+            }
+            return "";
+        }
+
+        // 检查确认
+        function checkConfirmation() {
+            let confirmed = getCookie("confirmed");
+            if (confirmed !== "true") {
+                let input;
+                while (true) {
+                    input = prompt("请输入确认语句：我已确认不需要任何预警");
+                    if (input === null) {
+                        // 用户点取消 -> 再弹一次，不允许进入
+                        continue;
+                    }
+                    if (input.trim() === "我已确认不需要任何预警") {
+                        setCookie("confirmed", "true", 30); // 有效期30天
+                        break;
+                    } else {
+                        alert("输入不正确，请重新输入。");
+                    }
+                }
+            }
+        }
+
+        // 页面加载时执行
+        window.addEventListener("DOMContentLoaded", checkConfirmation);
+
         document.addEventListener('mousemove', updateEye);
 
         document.addEventListener('touchmove', (e) => {
