@@ -48,14 +48,19 @@
             left: 0;
         }
 
-        .eye img.eyeball {
+        .eye img.eye-bg {
             z-index: 2;
+            transform-origin: center 45%;
+            transition: transform 0.05s linear;
+        }
+
+        .eye img.eyeball {
+            z-index: 3;
             transition: transform 0.05s linear;
         }
 
         .eye img.eye-close {
-            z-index: 3;
-            display: none;
+            z-index: 1;
         }
 
         /* 底部按钮水平居中 */
@@ -109,7 +114,7 @@
     </div>
 
     <div class="eye">
-        <img src="https://imgbed.299969.xyz/2025/09/eye.png" class="eye-bg" alt="眼眶">
+        <img src="https://imgbed.299969.xyz/2025/09/iris.png" class="eye-bg" alt="眼眶" id="iris">
         <img src="https://imgbed.299969.xyz/2025/09/eyeball.png" class="eyeball" alt="眼球" id="eyeball">
         <img src="https://imgbed.299969.xyz/2025/09/eye_close.png" class="eye-close" alt="闭眼">
     </div>
@@ -121,6 +126,7 @@
 
     <script>
         const eye = document.querySelector('.eye');
+        const iris = document.getElementById('iris');
         const eyeball = document.getElementById('eyeball');
         const eyeClose = document.querySelector('.eye-close');
 
@@ -140,28 +146,46 @@
             const dy = e.clientY - eyeCenter.y;
 
             const maxXDist = 30;
-            const maxYDist = 30;
+            const maxYDist = 50;
+            const maxAngle = 20;
 
+            // ------------------------
+            // iris：绕中心旋转
+            // ------------------------
+            let angle = -30 * dy / (window.innerHeight / 2);
+            iris.style.transform = `rotate(${angle}deg)`;
+
+            // ------------------------
+            // eyeball：跟随平移
+            // ------------------------
             let x = dx / 10;
             let y = dy / 10;
 
-            if (x > maxXDist) x = maxXDist;
-            if (x < -maxXDist) x = -maxXDist;
-            if (y > maxYDist) y = maxYDist;
-            if (y < -maxYDist) y = -maxYDist;
+            // 椭圆限制
+            const a = 40; // x方向半轴（短轴）
+            const b = 60; // y方向半轴（长轴）
+
+            const ellipseValue = (x * x) / (a * a) + (y * y) / (b * b);
+            if (ellipseValue > 1) {
+                const scale = 1 / Math.sqrt(ellipseValue);
+                x *= scale;
+                y *= scale;
+            }
+
 
             eyeball.style.transform = `translate(${x}px, ${y}px)`;
         }
 
+
         function showBlink() {
-            eyeClose.style.display = "block";
+            iris.style.display = "none";
             eyeball.style.display = "none";
             // 0.5 秒后恢复
             blinkTimer = setTimeout(hideBlink, 400);
         }
 
         function hideBlink() {
-            eyeClose.style.display = "none";
+            iris.style.display = "block";
             eyeball.style.display = "block";
             blinkTimeout = setTimeout(showBlink, 3000);
         }
