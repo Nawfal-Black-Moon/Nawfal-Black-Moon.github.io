@@ -12,25 +12,44 @@
             height: 100vh;
             display: flex;
             flex-direction: column;
-            /* 上下排列 */
             align-items: center;
-            /* 水平居中 */
-            background: radial-gradient(circle at center, #000 0%, #111 80%, #000 100%);
+            justify-content: flex-start;
             overflow: hidden;
             padding: 5vh 0;
-            /* 上下留白 */
+            background: black;
+            position: relative;
         }
 
-        /* 标题居中 */
+        /* ✅ 数字雨背景层 */
+        #matrix-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            background: black;
+        }
+
+        /* 内容层级提升 */
+        .title,
+        .eye,
+        .links {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* 标题 */
         .title h1 {
             margin: 0;
             color: white;
             font-family: "XiangcuiDazijitiW15", sans-serif;
             font-size: 40px;
             text-align: center;
+            text-shadow: 0 0 15px #0f0;
         }
 
-        /* 眼睛水平居中 */
+        /* 眼睛容器 */
         .eye {
             position: relative;
             margin-top: 15vh;
@@ -38,7 +57,7 @@
             height: 200px;
         }
 
-        /* 眼睛各元素 */
+        /* 眼睛图片 */
         .eye img.eye-bg,
         .eye img.eyeball,
         .eye img.eye-close {
@@ -63,7 +82,7 @@
             z-index: 1;
         }
 
-        /* 底部按钮水平居中 */
+        /* 底部按钮 */
         .links {
             display: flex;
             margin-top: 30vh;
@@ -109,6 +128,9 @@
 </head>
 
 <body>
+    <!-- ✅ 黑客帝国数字流背景 -->
+    <canvas id="matrix-bg"></canvas>
+
     <div class="title">
         <h1>欢迎来到 理想国</h1>
     </div>
@@ -120,11 +142,49 @@
     </div>
 
     <div class="links">
-        <button class="pill red" onclick="location.href='理想国.html'">理想国</button>
+        <button class="pill red" onclick="location.href='https://imgbed.299969.xyz/game/theRPB.html'">理想国</button>
         <button class="pill blue">尚未公开</button>
     </div>
 
     <script>
+        // ===== 数字雨特效 =====
+        const canvas = document.getElementById('matrix-bg');
+        const ctx = canvas.getContext('2d');
+
+        function resizeMatrix() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        resizeMatrix();
+        window.addEventListener('resize', resizeMatrix);
+
+        const letters = '01';
+        const fontSize = 16;
+        let columns = Math.floor(canvas.width / fontSize);
+        let drops = Array(columns).fill(1);
+
+        function drawMatrix() {
+            // 透明黑层，产生拖尾效果
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            ctx.fillStyle = '#0F0';
+            ctx.font = fontSize + 'px monospace';
+
+            for (let i = 0; i < drops.length; i++) {
+                const text = letters.charAt(Math.floor(Math.random() * letters.length));
+                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                    drops[i] = 0;
+                }
+                drops[i]++;
+            }
+        }
+
+        setInterval(drawMatrix, 50);
+
+        // ===== 眼睛交互 =====
         const eye = document.querySelector('.eye');
         const iris = document.getElementById('iris');
         const eyeball = document.getElementById('eyeball');
@@ -136,8 +196,8 @@
             y: eyeRect.top + eyeRect.height / 2
         };
 
-        let blinkTimeout;   // 2秒不动计时
-        let blinkTimer;     // 眨眼0.5秒计时
+        let blinkTimeout;
+        let blinkTimer;
 
         function updateEye(e) {
             resetBlinkTimer();
@@ -147,23 +207,15 @@
 
             const maxXDist = 30;
             const maxYDist = 50;
-            const maxAngle = 20;
 
-            // ------------------------
-            // iris：绕中心旋转
-            // ------------------------
             let angle = -30 * dy / (window.innerHeight / 2);
             iris.style.transform = `rotate(${angle}deg)`;
 
-            // ------------------------
-            // eyeball：跟随平移
-            // ------------------------
             let x = dx / 10;
             let y = dy / 10;
 
-            // 椭圆限制
-            const a = 40; // x方向半轴（短轴）
-            const b = 60; // y方向半轴（长轴）
+            const a = 40;
+            const b = 60;
 
             const ellipseValue = (x * x) / (a * a) + (y * y) / (b * b);
             if (ellipseValue > 1) {
@@ -172,15 +224,12 @@
                 y *= scale;
             }
 
-
             eyeball.style.transform = `translate(${x}px, ${y}px)`;
         }
-
 
         function showBlink() {
             iris.style.display = "none";
             eyeball.style.display = "none";
-            // 0.5 秒后恢复
             blinkTimer = setTimeout(hideBlink, 400);
         }
 
@@ -196,51 +245,7 @@
             hideBlink();
         }
 
-        // 设置 cookie
-        function setCookie(name, value, days) {
-            const d = new Date();
-            d.setTime(d.getTime() + (days * 24 * 60 * 60 * 1000)); // 默认几天有效
-            let expires = "expires=" + d.toUTCString();
-            document.cookie = name + "=" + value + ";" + expires + ";path=/";
-        }
-
-        // 获取 cookie
-        function getCookie(name) {
-            let cname = name + "=";
-            let ca = document.cookie.split(';');
-            for (let i = 0; i < ca.length; i++) {
-                let c = ca[i].trim();
-                if (c.indexOf(cname) === 0) return c.substring(cname.length, c.length);
-            }
-            return "";
-        }
-
-        // 检查确认
-        function checkConfirmation() {
-            let confirmed = getCookie("confirmed");
-            if (confirmed !== "true") {
-                let input;
-                while (true) {
-                    input = prompt("请输入确认语句：我已确认不需要任何预警");
-                    if (input === null) {
-                        // 用户点取消 -> 再弹一次，不允许进入
-                        continue;
-                    }
-                    if (input.trim() === "我已确认不需要任何预警") {
-                        setCookie("confirmed", "true", 30); // 有效期30天
-                        break;
-                    } else {
-                        alert("输入不正确，请重新输入。");
-                    }
-                }
-            }
-        }
-
-        // 页面加载时执行
-        window.addEventListener("DOMContentLoaded", checkConfirmation);
-
         document.addEventListener('mousemove', updateEye);
-
         document.addEventListener('touchmove', (e) => {
             if (e.touches[0]) updateEye(e.touches[0]);
         }, { passive: true });
