@@ -161,7 +161,7 @@
         const letters = '01';
         const fontSize = 16;
         let columns = Math.floor(canvas.width / fontSize);
-        let drops = Array(columns).fill(1);
+        let drops = Array.from({ length: columns }, () => Math.random() * canvas.height / fontSize);
 
         function drawMatrix() {
             // 透明黑层，产生拖尾效果
