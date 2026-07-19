@@ -100,7 +100,7 @@
             border: none;
             border-radius: 999px;
             cursor: pointer;
-            transition: transform 0.2s, box-shadow 0.2s;
+            transition: transform 0.2s, box-shadow 0.2s, opacity 0.4s ease;
             box-shadow: inset -2px -2px 6px rgba(255, 255, 255, 0.4),
                 inset 2px 2px 6px rgba(0, 0, 0, 0.4),
                 0 0 12px rgba(0, 0, 0, 0.6);
@@ -150,8 +150,8 @@
 
     <div class="links">
         <!-- <button class="pill red" onclick="location.href='https://imgbed.299969.xyz/game/theRPB.html'">理想国</button> -->
-        <button class="pill red" onclick="location.href='理想国.html'">理想国</button>
-        <button class="pill blue" onclick="location.href='乌托邦.html'">乌托邦</button>
+        <button class="pill red" id="red-pill" onclick="location.href='理想国.html'">理想国</button>
+        <button class="pill blue" id="blue-pill" onclick="location.href='乌托邦.html'">乌托邦</button>
         <button class="pill gold" id="gold-pill" onclick="location.href='黄金乡.html'">黄金乡</button>
     </div>
 
@@ -272,6 +272,8 @@
 
         // ===== 黄金乡彩蛋：连点眼睛5次解锁，数字雨从绿变金（不可逆） =====
         const goldPill = document.getElementById('gold-pill');
+        const redPill = document.getElementById('red-pill');
+        const bluePill = document.getElementById('blue-pill');
         const titleH1 = document.querySelector('.title h1');
         let eyeClickCount = 0;
 
@@ -302,6 +304,11 @@
 
             eyeClickCount++;
 
+            // 红蓝药丸逐级变淡（20% → 40% → 60% → 80% → 100%）
+            const opacity = 1 - eyeClickCount * 0.2;
+            redPill.style.opacity = opacity;
+            bluePill.style.opacity = opacity;
+
             // 数字雨逐级从绿变金，只进不退
             const t = Math.min(eyeClickCount / 5, 1);
             setRainColor(t);
@@ -310,6 +317,8 @@
             showBlink();
 
             if (eyeClickCount >= 5) {
+                redPill.style.display = 'none';
+                bluePill.style.display = 'none';
                 goldPill.style.display = 'block';
             }
         });
