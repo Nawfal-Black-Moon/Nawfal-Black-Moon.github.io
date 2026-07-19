@@ -122,7 +122,14 @@
         .pill.blue {
             background: linear-gradient(to left, rgb(255, 255, 255) 50%, #3399ff 50%);
             text-align: left;
-            padding-left: 5px;
+            padding-left: 20px;
+        }
+
+        .pill.gold {
+            background: linear-gradient(to right, rgb(255, 255, 255) 50%, #ffaa00 50%);
+            text-align: right;
+            padding-right: 20px;
+            display: none;
         }
     </style>
 </head>
@@ -144,7 +151,8 @@
     <div class="links">
         <!-- <button class="pill red" onclick="location.href='https://imgbed.299969.xyz/game/theRPB.html'">理想国</button> -->
         <button class="pill red" onclick="location.href='理想国.html'">理想国</button>
-        <button class="pill blue">尚未公开</button>
+        <button class="pill blue" onclick="location.href='乌托邦.html'">乌托邦</button>
+        <button class="pill gold" id="gold-pill" onclick="location.href='黄金乡.html'">黄金乡</button>
     </div>
 
     <script>
@@ -163,13 +171,14 @@
         const fontSize = 16;
         let columns = Math.floor(canvas.width / fontSize);
         let drops = Array.from({ length: columns }, () => Math.random() * canvas.height / fontSize);
+        let rainColorHex = '#0F0'; // 数字雨颜色，彩蛋触发后动态变化
 
         function drawMatrix() {
             // 透明黑层，产生拖尾效果
             ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
             ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-            ctx.fillStyle = '#0F0';
+            ctx.fillStyle = rainColorHex;
             ctx.font = fontSize + 'px monospace';
 
             for (let i = 0; i < drops.length; i++) {
@@ -229,6 +238,8 @@
         }
 
         function showBlink() {
+            clearTimeout(blinkTimer);
+            clearTimeout(blinkTimeout);
             iris.style.display = "none";
             eyeball.style.display = "none";
             blinkTimer = setTimeout(hideBlink, 400);
@@ -258,6 +269,50 @@
         });
 
         resetBlinkTimer();
+
+        // ===== 黄金乡彩蛋：连点眼睛5次解锁，数字雨从绿变金（不可逆） =====
+        const goldPill = document.getElementById('gold-pill');
+        const titleH1 = document.querySelector('.title h1');
+        let eyeClickCount = 0;
+
+        const GREEN = { r: 0, g: 255, b: 0 };
+        const GOLD = { r: 255, g: 170, b: 0 };
+
+        function lerpColor(from, to, t) {
+            return {
+                r: Math.round(from.r + (to.r - from.r) * t),
+                g: Math.round(from.g + (to.g - from.g) * t),
+                b: Math.round(from.b + (to.b - from.b) * t)
+            };
+        }
+
+        function colorToHex(c) {
+            return '#' + [c.r, c.g, c.b].map(v => v.toString(16).padStart(2, '0')).join('');
+        }
+
+        function setRainColor(t) {
+            const c = lerpColor(GREEN, GOLD, t);
+            rainColorHex = colorToHex(c);
+            // 标题光晕同步变化
+            titleH1.style.textShadow = `0 0 15px ${rainColorHex}`;
+        }
+
+        eye.addEventListener('click', () => {
+            if (eyeClickCount >= 5) return; // 已解锁，不再处理
+
+            eyeClickCount++;
+
+            // 数字雨逐级从绿变金，只进不退
+            const t = Math.min(eyeClickCount / 5, 1);
+            setRainColor(t);
+
+            // 每次点击触发一次眨眼
+            showBlink();
+
+            if (eyeClickCount >= 5) {
+                goldPill.style.display = 'block';
+            }
+        });
     </script>
 </body>
 
