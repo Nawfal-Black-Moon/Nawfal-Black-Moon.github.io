@@ -113,6 +113,26 @@
                 inset 2px 2px 6px rgba(0, 0, 0, 0.5);
         }
 
+        /* 药丸改成 <a> 后保持与 <button> 一致的外观（并支持中键/右键/长按在新标签打开） */
+        a.pill {
+            display: flex;
+            align-items: center;
+            box-sizing: border-box;
+            text-decoration: none;
+        }
+
+        a.pill.red {
+            justify-content: flex-end;
+        }
+
+        a.pill.blue {
+            justify-content: flex-start;
+        }
+
+        a.pill.gold {
+            justify-content: flex-end;
+        }
+
         .pill.red {
             background: linear-gradient(to right, rgb(255, 255, 255) 50%, #ff3333 50%);
             text-align: right;
@@ -143,16 +163,16 @@
     </div>
 
     <div class="eye">
-        <img src="https://imgbed.299969.xyz/2025/09/iris.png" onerror="this.onerror=null; this.src='https://arzunawfal.299969.xyz/img/iris.png';" class="eye-bg" alt="眼眶" id="iris">
-        <img src="https://imgbed.299969.xyz/2025/09/eyeball.png" onerror="this.onerror=null; this.src='https://arzunawfal.299969.xyz/img/eyeball.png';" class="eyeball" alt="眼球" id="eyeball">
-        <img src="https://imgbed.299969.xyz/2025/09/eye_close.png" onerror="this.onerror=null; this.src='https://arzunawfal.299969.xyz/img/eye_close.png';" class="eye-close" alt="闭眼">
+        <img src="https://imgbed.299269.xyz/2025/09/iris.png" onerror="this.onerror=null; this.src='https://nan.299269.xyz/img/iris.png';" class="eye-bg" alt="眼眶" id="iris">
+        <img src="https://imgbed.299269.xyz/2025/09/eyeball.png" onerror="this.onerror=null; this.src='https://nan.299269.xyz/img/eyeball.png';" class="eyeball" alt="眼球" id="eyeball">
+        <img src="https://imgbed.299269.xyz/2025/09/eye_close.png" onerror="this.onerror=null; this.src='https://nan.299269.xyz/img/eye_close.png';" class="eye-close" alt="闭眼">
     </div>
 
     <div class="links">
-        <!-- <button class="pill red" onclick="location.href='https://imgbed.299969.xyz/game/theRPB.html'">理想国</button> -->
-        <button class="pill red" id="red-pill" onclick="location.href='理想国.html'">理想国</button>
-        <button class="pill blue" id="blue-pill" onclick="location.href='乌托邦.html'">乌托邦</button>
-        <button class="pill gold" id="gold-pill" onclick="location.href='黄金乡.html'">黄金乡</button>
+        <!-- <button class="pill red" onclick="location.href='https://imgbed.299269.xyz/game/theRPB.html'">理想国</button> -->
+        <a class="pill red" id="red-pill" href="理想国.html?from=index">理想国</a>
+        <a class="pill blue" id="blue-pill" href="乌托邦.html?from=index">乌托邦</a>
+        <a class="pill gold" id="gold-pill" href="黄金乡.html?from=index">黄金乡</a>
     </div>
 
     <script>
@@ -319,7 +339,7 @@
             if (eyeClickCount >= 5) {
                 redPill.style.display = 'none';
                 bluePill.style.display = 'none';
-                goldPill.style.display = 'block';
+                goldPill.style.display = 'flex';
             }
         });
     </script>

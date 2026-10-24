@@ -6,6 +6,23 @@
 <title>乌托邦_1025</title>
 <style title="Twine CSS">@keyframes appear{0%{opacity:0}to{opacity:1}}@keyframes fade-in-out{0%,to{opacity:0}50%{opacity:1}}@keyframes rumble{25%{top:-0.1em}75%{top:.1em}0%,to{top:0px}}@keyframes shudder{25%{left:.1em}75%{left:-0.1em}0%,to{left:0px}}@keyframes buoy{25%{top:.25em}75%{top:-0.25em}0%,to{top:0px}}@keyframes sway{25%{left:.25em}75%{left:-0.25em}0%,to{left:0px}}@keyframes pulse{0%{transform:scale(0, 0)}20%{transform:scale(1.2, 1.2)}40%{transform:scale(0.9, 0.9)}60%{transform:scale(1.05, 1.05)}80%{transform:scale(0.925, 0.925)}to{transform:scale(1, 1)}}@keyframes zoom-in{0%{transform:scale(0, 0)}to{transform:scale(1, 1)}}@keyframes shudder-in{0%,to{transform:translateX(0em)}5%,25%,45%{transform:translateX(-1em)}15%,35%,55%{transform:translateX(1em)}65%{transform:translateX(-0.6em)}75%{transform:translateX(0.6em)}85%{transform:translateX(-0.2em)}95%{transform:translateX(0.2em)}}@keyframes rumble-in{0%,to{transform:translateY(0em)}5%,25%,45%{transform:translateY(-1em)}15%,35%,55%{transform:translateY(1em)}65%{transform:translateY(-0.6em)}75%{transform:translateY(0.6em)}85%{transform:translateY(-0.2em)}95%{transform:translateY(0.2em)}}@keyframes fidget{0%,8.1%,82.1%,31.1%,38.1%,44.1%,40.1%,47.1%,74.1%,16.1%,27.1%,72.1%,24.1%,95.1%,6.1%,36.1%,20.1%,4.1%,91.1%,14.1%,87.1%,to{left:0px;top:0px}8%,82%,31%,38%,44%{left:-1px}40%,47%,74%,16%,27%{left:1px}72%,24%,95%,6%,36%{top:-1px}20%,4%,91%,14%,87%{top:1px}}@keyframes slide-right{0%{transform:translateX(-100vw)}}@keyframes slide-left{0%{transform:translateX(100vw)}}@keyframes slide-up{0%{transform:translateY(100vh)}}@keyframes slide-down{0%{transform:translateY(-100vh)}}@keyframes fade-right{0%{opacity:0;transform:translateX(-1em)}to{opacity:1}}@keyframes fade-left{0%{opacity:0;transform:translateX(1em)}to{opacity:1}}@keyframes fade-up{0%{opacity:0;transform:translateY(1em)}to{opacity:1}}@keyframes fade-down{0%{opacity:0;transform:translateY(-1em)}to{opacity:1}}@keyframes flicker{0%,29%,31%,63%,65%,77%,79%,86%,88%,91%,93%{opacity:0}30%{opacity:.2}64%{opacity:.4}78%{opacity:.6}87%{opacity:.8}92%,to{opacity:1}}@keyframes blur{0%{filter:blur(2rem);opacity:0}25%{opacity:1}to{filter:blur(0rem);opacity:1}}.dom-debug-mode tw-story,.dom-debug-mode tw-passage,.dom-debug-mode tw-sidebar,.dom-debug-mode tw-include,.dom-debug-mode tw-hook,.dom-debug-mode tw-expression,.dom-debug-mode tw-link,.dom-debug-mode tw-dialog,.dom-debug-mode tw-columns,.dom-debug-mode tw-column,.dom-debug-mode tw-align{outline:1px solid #f5a3da;min-height:32px;display:block !important}.dom-debug-mode tw-story::before,.dom-debug-mode tw-passage::before,.dom-debug-mode tw-sidebar::before,.dom-debug-mode tw-include::before,.dom-debug-mode tw-hook::before,.dom-debug-mode tw-expression::before,.dom-debug-mode tw-link::before,.dom-debug-mode tw-dialog::before,.dom-debug-mode tw-columns::before,.dom-debug-mode tw-column::before,.dom-debug-mode tw-align::before{position:absolute;top:0;left:0;height:16px;background-color:#f5a3da;color:#000;font-size:16px;font-weight:normal;font-style:normal;font-family:monospace;display:inline-block;line-height:100%;white-space:pre;z-index:999997}.dom-debug-mode tw-story:hover,.dom-debug-mode tw-passage:hover,.dom-debug-mode tw-sidebar:hover,.dom-debug-mode tw-include:hover,.dom-debug-mode tw-hook:hover,.dom-debug-mode tw-expression:hover,.dom-debug-mode tw-link:hover,.dom-debug-mode tw-dialog:hover,.dom-debug-mode tw-columns:hover,.dom-debug-mode tw-column:hover,.dom-debug-mode tw-align:hover{outline:1px solid #fc9}.dom-debug-mode tw-story:hover::before,.dom-debug-mode tw-passage:hover::before,.dom-debug-mode tw-sidebar:hover::before,.dom-debug-mode tw-include:hover::before,.dom-debug-mode tw-hook:hover::before,.dom-debug-mode tw-expression:hover::before,.dom-debug-mode tw-link:hover::before,.dom-debug-mode tw-dialog:hover::before,.dom-debug-mode tw-columns:hover::before,.dom-debug-mode tw-column:hover::before,.dom-debug-mode tw-align:hover::before{background-color:#fc9;transition:background-color 1s}.dom-debug-mode tw-passage,.dom-debug-mode tw-include,.dom-debug-mode tw-hook,.dom-debug-mode tw-expression,.dom-debug-mode tw-link,.dom-debug-mode tw-dialog,.dom-debug-mode tw-columns,.dom-debug-mode tw-column,.dom-debug-mode tw-align{padding:1em;margin:0}.dom-debug-mode tw-story::before{content:'<tw-story tags="' attr(tags) '">'}.dom-debug-mode tw-passage::before{top:-16px;content:'<tw-passage tags="' attr(tags) '">'}.dom-debug-mode tw-sidebar::before{top:-16px;content:"<tw-sidebar>"}.dom-debug-mode tw-hook::before{content:'<tw-hook name="' attr(name) '">'}.dom-debug-mode tw-expression::before{content:'<tw-expression name="' attr(name) '">'}.dom-debug-mode tw-link::before{content:'<tw-link name="' attr(name) '">'}.dom-debug-mode tw-dialog::before{content:"<tw-dialog>"}.dom-debug-mode tw-columns::before{content:"<tw-columns>"}.dom-debug-mode tw-column::before{content:"<tw-column>"}.dom-debug-mode tw-align::before{content:"<tw-align>"}.dom-debug-mode tw-include::before{content:'<tw-include type="' attr(type) '" name="' attr(name) '">'}tw-open-button[goto]{display:none}.debug-mode tw-open-button[replay],.debug-mode tw-open-button[goto]{display:inline}.debug-mode tw-expression{display:inline-block !important}.debug-mode tw-expression[type=variable]::after{font-size:.8rem;padding-left:.2rem;padding-right:.2rem;vertical-align:top;content:"$" attr(name)}.debug-mode tw-expression[type=tempVariable]::after{font-size:.8rem;padding-left:.2rem;padding-right:.2rem;vertical-align:top;content:"_" attr(name)}.debug-mode tw-expression[return=boolean]{background-color:rgba(179,179,179,.2)}.debug-mode tw-expression[return=array]{background-color:rgba(255,102,102,.2)}.debug-mode tw-expression[return=dataset]{background-color:rgba(255,128,0,.2)}.debug-mode tw-expression[return=number]{background-color:rgba(255,179,102,.2)}.debug-mode tw-expression[return=datamap]{background-color:rgba(255,255,102,.2)}.debug-mode tw-expression[return=changer]{background-color:rgba(179,255,102,.2)}.debug-mode tw-expression[return=lambda]{background-color:rgba(102,255,102,.2)}.debug-mode tw-expression[return=hookname]{background-color:rgba(102,255,204,.2)}.debug-mode tw-expression[return=string]{background-color:rgba(102,255,255,.2)}.debug-mode tw-expression[return=datatype]{background-color:rgba(102,153,255,.2)}.debug-mode tw-expression[return=gradient],.debug-mode tw-expression[return=colour]{background-color:rgba(204,102,255,.2)}.debug-mode tw-expression[return=instant],.debug-mode tw-expression[return=macro]{background-color:rgba(240,117,199,.2)}.debug-mode tw-expression[return=command]{background-color:rgba(153,153,255,.2)}.debug-mode tw-expression.false{background-color:rgba(255,0,0,.2) !important}.debug-mode tw-expression[type=macro]::before{content:"(" attr(name) ":)";padding:0 .5rem;font-size:1rem;vertical-align:middle;line-height:normal;background-color:inherit;border:1px solid rgba(255,255,255,.5)}.debug-mode tw-expression[title]:not([title=""]){cursor:help}.debug-mode tw-hook{background-color:rgba(0,85,255,.1) !important}.debug-mode tw-hook::before{font-size:.8rem;padding-left:.2rem;padding-right:.2rem;vertical-align:top;content:"["}.debug-mode tw-hook::after{font-size:.8rem;padding-left:.2rem;padding-right:.2rem;vertical-align:top;content:"]"}.debug-mode tw-hook[name]::after{font-size:.8rem;padding-left:.2rem;padding-right:.2rem;vertical-align:top;content:"]<" attr(name) "|"}.debug-mode tw-pseudo-hook{background-color:rgba(255,170,0,.1) !important}.debug-mode tw-collapsed::before{font-size:.8rem;padding-left:.2rem;padding-right:.2rem;vertical-align:top;content:"{"}.debug-mode tw-collapsed::after{font-size:.8rem;padding-left:.2rem;padding-right:.2rem;vertical-align:top;content:"}"}.debug-mode tw-verbatim::before,.debug-mode tw-verbatim::after{font-size:.8rem;padding-left:.2rem;padding-right:.2rem;vertical-align:top;content:"`"}.debug-mode tw-align[style*="text-align: center"]{background:linear-gradient(to right, hsla(14, 100%, 87%, 0) 0%, hsla(14, 100%, 87%, 0.25) 50%, hsla(14, 100%, 87%, 0) 100%)}.debug-mode tw-align[style*="text-align: left"]{background:linear-gradient(to right, hsla(14, 100%, 87%, 0.25) 0%, hsla(14, 100%, 87%, 0) 100%)}.debug-mode tw-align[style*="text-align: right"]{background:linear-gradient(to right, hsla(14, 100%, 87%, 0) 0%, hsla(14, 100%, 87%, 0.25) 100%)}.debug-mode tw-column{background-color:rgba(189,228,255,.2)}.debug-mode tw-enchantment{animation:enchantment .5s infinite;border:1px solid}.debug-mode tw-link::after,.debug-mode tw-broken-link::after{font-size:.8rem;padding-left:.2rem;padding-right:.2rem;vertical-align:top;content:attr(passage-name)}.debug-mode tw-include{background-color:rgba(204,128,51,.1)}.debug-mode tw-include::before{font-size:.8rem;padding-left:.2rem;padding-right:.2rem;vertical-align:top;content:attr(type) ' "' attr(name) '"'}.debug-dialogs tw-backdrop:not(.eval-replay):not(.harlowe-crash){pointer-events:none;opacity:.1}tw-eval-replay tw-eval-code,tw-eval-replay tw-eval-explanation{max-height:20vh;overflow:auto;margin:10px auto}tw-eval-replay tw-eval-code{display:block;font-family:monospace;padding-bottom:1ex;border-bottom:2px solid gray}tw-eval-replay tw-eval-explanation{display:block;text-align:center}tw-eval-replay tw-eval-explanation>code{white-space:pre-wrap}tw-eval-replay tw-eval-explanation>code.from-block{width:40%;display:inline-block;text-align:left;max-height:4em;overflow-wrap:anywhere;overflow-y:scroll}tw-eval-replay tw-eval-explanation>code.from-block~.to-desc{width:calc(40% - 2em);margin-left:2em;display:inline-block}tw-eval-replay tw-eval-explanation>code.from-block+span::after{content:"..."}tw-eval-replay tw-eval-explanation>code.from-inline{text-align:right}tw-eval-replay tw-eval-explanation>:nth-child(2){white-space:pre}tw-eval-replay tw-eval-explanation>.to-desc{text-align:left}tw-eval-replay tw-eval-explanation>table{width:100%;margin-top:1em}tw-eval-replay tw-eval-explanation>table td{white-space:pre-wrap !important;word-wrap:anywhere}tw-eval-replay tw-eval-reason{text-align:center;font-size:80%;font-style:italic;display:block}tw-eval-replay tw-eval-it{text-align:center;font-size:80%;display:block}tw-eval-replay tw-dialog-links{display:-ms-flexbox;display:flex;-ms-flex-pack:distribute;justify-content:space-around}@keyframes enchantment{0%,to{border-color:#ffb366}50%{border-color:#6fc}}tw-debugger{position:fixed;box-sizing:border-box;bottom:0;right:0;z-index:999999;min-width:14em;min-height:1em;padding:0em .5em .5em 1em;font-size:1.25em;font-family:sans-serif;color:#262626;background-color:#fff;border-left:solid #262626 2px;border-top:solid #262626 2px;border-top-left-radius:.5em;opacity:1}tw-debugger.fade-panel:not(:hover){opacity:.33}tw-debugger.theme-dark{color:#d9d9d9;background-color:#000}tw-debugger.theme-dark{border-color:#d9d9d9 rgba(0,0,0,0) rgba(0,0,0,0) #d9d9d9}tw-debugger select{margin-right:1em;width:12em}tw-debugger button,tw-debugger tw-link{border-radius:3px;border:solid #999 1px;margin:auto 4px;color:#262626;background-color:#fff;cursor:pointer}tw-debugger button.enabled,tw-debugger tw-link.enabled{color:#000;background-color:#d9d9d9;box-shadow:inset #999 3px 5px .5em}tw-debugger.theme-dark button,tw-debugger.theme-dark tw-link{color:#d9d9d9;background-color:#000;border-color:#666}tw-debugger.theme-dark button.enabled,tw-debugger.theme-dark tw-link.enabled{color:#e6e6e6;background-color:#424242;box-shadow:inset #666 3px 5px .5em}tw-debugger button{font-size:1em;overflow-x:hidden;text-overflow:ellipsis;white-space:pre}tw-debugger tw-link{font-size:1.25em;border-radius:16px;border-style:solid;border-width:2px;text-align:center;padding:0px 8px;display:block}tw-debugger tw-link:hover{border-color:#262626;color:#262626}tw-debugger.theme-dark tw-link:hover{border-color:#d9d9d9;color:#d9d9d9}tw-debugger tw-dialog{background-color:#fff;color:#000;font-size:1.25em}tw-debugger.theme-dark tw-dialog{background-color:#000;color:#e6e6e6}tw-debugger .panel{display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;position:absolute;bottom:100%;left:-2px;right:0;padding:1em;overflow-y:scroll;overflow-x:hidden;border:inherit;box-sizing:content-box;background-color:#fff;border-bottom:solid #999 2px;border-top-left-radius:.5em;border-bottom-left-radius:.5em;font-size:.8em}tw-debugger .panel:empty,tw-debugger .panel[hidden]{display:none}tw-debugger.theme-dark .panel{background-color:#000;border-bottom-color:#666}tw-debugger .panel-source .panel-row-buttons{width:2rem}tw-debugger .panel-source .source-tags{width:20%;font-style:italic}tw-debugger .panel-row-source td{font-family:monospace;font-size:1rem;white-space:pre-wrap;overflow-wrap:anywhere;max-height:8rem;padding:1rem}tw-debugger .panel-rows{width:100%;overflow-x:scroll}tw-debugger .panel-rows>*{display:table-row}tw-debugger .panel-rows>div:nth-of-type(2n){background-color:#e6e6e6}tw-debugger .panel-tools .panel-rows>*,tw-debugger .panel-options .panel-rows>*{margin-top:.4rem;display:block}tw-debugger.theme-dark .panel-rows>div:nth-of-type(2n){background-color:#212121}tw-debugger .panel-row-buttons{text-align:right}tw-debugger .panel-variables .panel-rows:empty::before{content:"~ No variables ~";font-style:italic;color:#575757;text-align:center}tw-debugger .panel-enchantments .panel-rows:empty::before{content:"~ No enchantments ~";font-style:italic;color:#575757;text-align:center}tw-debugger .panel-errors .panel-rows:empty::before{content:"~ No errors... for now. ~";font-style:italic;color:#575757;text-align:center}tw-debugger .panel-errors .panel-rows:empty+.panel-errors-bottom{display:none}tw-debugger.theme-dark .panel-variables .panel-rows:empty::before,tw-debugger.theme-dark .panel-enchantments .panel-rows:empty::before,tw-debugger.theme-dark .panel-errors .panel-rows:empty::before{color:#a8a8a8}tw-debugger .panel-rows:empty+.panel-variables-bottom{display:none}tw-debugger th[data-col]{text-decoration:underline;cursor:pointer}tw-debugger th[data-col][data-order=asc]::after{content:"↓"}tw-debugger th[data-col][data-order=desc]::after{content:"↑"}tw-debugger .panel-storylets:not(.panel-exclusive) .storylet-exclusive,tw-debugger .panel-storylets:not(.panel-urgent) .storylet-urgent{display:none}tw-debugger .storylet-exclusive,tw-debugger .storylet-urgent,tw-debugger .storylet-open{text-align:center}tw-debugger .panel-variables-bottom{padding-top:5px}tw-debugger .enchantment-row{min-height:1.5em}tw-debugger .variable-path{opacity:.4}tw-debugger .temporary-variable-scope,tw-debugger .enchantment-local{font-family:sans-serif;font-weight:normal;opacity:.8;font-size:.75em}tw-debugger .temporary-variable-scope:not(:empty)::before,tw-debugger .enchantment-local:not(:empty)::before{content:" in "}tw-debugger .variable-name,tw-debugger .enchantment-name{font-family:monospace;font-weight:bold}tw-debugger .variable-type{color:#575757;font-weight:normal;text-overflow:ellipsis;overflow:hidden;max-width:10em}tw-debugger.theme-dark .variable-type{color:#a8a8a8}tw-debugger .error-row{display:table-row;background-color:rgba(230,101,204,.3)}tw-debugger .error-row:nth-of-type(2n){background-color:rgba(237,145,219,.3)}tw-debugger .error-row>*{display:table-cell;padding:.25em .5em}tw-debugger .error-row .error-message[title]:not([title=""]){cursor:help}tw-debugger .error-row .error-passage{color:#575757}tw-debugger.theme-dark .error-row .error-passage{color:#a8a8a8}tw-debugger .storylet-row{background-color:rgba(193,240,225,.3)}tw-debugger .storylet-row:nth-child(2n){background-color:rgba(152,231,204,.3)}tw-debugger .storylet-row.storylet-closed{font-style:italic;background-color:#fff}tw-debugger .storylet-row.storylet-closed:nth-child(2n){background-color:#e6e6e6}tw-debugger .storylet-row.storylet-closed>:not(.storylet-lambda){opacity:.6}.storylet-error tw-debugger .storylet-row{background-color:rgba(230,101,204,.3)}.storylet-error tw-debugger .storylet-row:nth-child(2n){background-color:rgba(237,145,219,.3)}tw-debugger .storylet-row .storylet-name,tw-debugger .storylet-row .storylet-value{display:inline-block;width:50%}tw-debugger .storylet-row .storylet-lambda{font-family:monospace;font-size:1rem;white-space:pre-wrap;overflow-wrap:anywhere}tw-debugger.theme-dark .storylet-row.storylet-closed{background-color:#000}tw-debugger.theme-dark .storylet-row.storylet-closed:nth-child(2n){background-color:#212121}tw-debugger .tabs{padding-bottom:.5em}tw-debugger .tab{border-radius:0px 0px .5em .5em;border-top:none;top:-2px}tw-debugger .resizer-h{position:absolute;height:14em;border-left:2px solid #999;border-right:2px solid #999;top:10px;left:4px;width:8px;cursor:ew-resize}tw-debugger.theme-dark .resizer-h{border-color:rgba(0,0,0,0) #666}tw-debugger .resizer-v{position:absolute;height:8px;border-top:2px solid #999;border-bottom:2px solid #999;margin-bottom:4px;top:4px;left:10px;width:95%;cursor:ns-resize;box-sizing:border-box}tw-debugger.theme-dark .resizer-v{border-color:#666 rgba(0,0,0,0)}tw-debugger mark{color:inherit;background-color:rgba(101,230,230,.3) !important}tw-dialog{z-index:999997;border:#fff solid 2px;padding:2em;color:#fff;background-color:#000;display:block}@media(min-width: 576px){tw-dialog{max-width:50vw}}tw-dialog input[type=text]{font-size:inherit;width:100%;border:solid #fff !important}tw-dialog-links{text-align:right;display:-ms-flexbox;display:flex;-ms-flex-pack:end;justify-content:flex-end}tw-backdrop{z-index:999996;position:fixed;top:0;left:0;right:0;bottom:0;background-color:rgba(0,0,0,.8);display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center}tw-backdrop~tw-backdrop{display:none}tw-link,.enchantment-link{cursor:pointer;color:#4169e1;font-weight:bold;text-decoration:none;transition:color .2s ease-in-out}tw-passage [style^=color] tw-link:not(:hover),tw-passage [style*=" color"] tw-link:not(:hover),tw-passage [style^=color][hover=true] tw-link:hover,tw-passage [style*=" color"][hover=true] tw-link:hover,tw-passage [style^=color] .enchantment-link:not(:hover),tw-passage [style*=" color"] .enchantment-link:not(:hover),tw-passage [style^=color][hover=true] .enchantment-link:hover,tw-passage [style*=" color"][hover=true] .enchantment-link:hover{color:inherit}tw-link:hover,.enchantment-link:hover{color:#00bfff}tw-link:active,.enchantment-link:active{color:#dd4b39}.visited{color:#6941e1}tw-passage [style^=color] .visited:not(:hover),tw-passage [style*=" color"] .visited:not(:hover),tw-passage [style^=color][hover=true] .visited:hover,tw-passage [style*=" color"][hover=true] .visited:hover{color:inherit}.visited:hover{color:#e3e}tw-broken-link{color:#933;border-bottom:2px solid #933;cursor:not-allowed}tw-passage [style^=color] tw-broken-link:not(:hover),tw-passage [style*=" color"] tw-broken-link:not(:hover),tw-passage [style^=color][hover=true] tw-broken-link:hover,tw-passage [style*=" color"][hover=true] tw-broken-link:hover{color:inherit}tw-link.enchantment-mouseover,.link.enchantment-mouseover,tw-expression.enchantment-mouseover>tw-link{color:inherit;font-weight:inherit;transition:none;cursor:inherit;border-bottom:2px dashed #999}tw-link.enchantment-mouseover:hover,tw-link.enchantment-mouseover:active,.link.enchantment-mouseover:hover,.link.enchantment-mouseover:active,tw-expression.enchantment-mouseover>tw-link:hover,tw-expression.enchantment-mouseover>tw-link:active{color:inherit}tw-link.enchantment-mouseover.enchantment-button,.link.enchantment-mouseover.enchantment-button,tw-expression.enchantment-mouseover>tw-link.enchantment-button{border-style:dashed}tw-link.enchantment-mouseout,.link.enchantment-mouseout,tw-expression.enchantment-mouseout>tw-link{color:inherit;font-weight:inherit;transition:none;cursor:inherit;border:rgba(64,149,191,.6) 1px solid;border-radius:.2em}tw-link.enchantment-mouseout:hover,tw-link.enchantment-mouseout:active,.link.enchantment-mouseout:hover,.link.enchantment-mouseout:active,tw-expression.enchantment-mouseout>tw-link:hover,tw-expression.enchantment-mouseout>tw-link:active{color:inherit}tw-link.enchantment-mouseout:hover,.link.enchantment-mouseout:hover,tw-expression.enchantment-mouseout>tw-link:hover{background-color:rgba(175,197,207,.75);border:rgba(0,0,0,0) 1px solid}tw-link.enchantment-dblclick,.link.enchantment-dblclick,tw-expression.enchantment-dblclick>tw-link{color:inherit;font-weight:inherit;transition:none;cursor:inherit;cursor:pointer;border:2px solid #999;border-radius:0}tw-link.enchantment-dblclick:hover,tw-link.enchantment-dblclick:active,.link.enchantment-dblclick:hover,.link.enchantment-dblclick:active,tw-expression.enchantment-dblclick>tw-link:hover,tw-expression.enchantment-dblclick>tw-link:active{color:inherit}tw-link.enchantment-dblclick:active,.link.enchantment-dblclick:active,tw-expression.enchantment-dblclick>tw-link:active{background-color:#999}tw-link.enchantment-button,.link.enchantment-button,.enchantment-button:not(.link) tw-link,.enchantment-button:not(.link) .link{border-radius:16px;border-style:solid;border-width:2px;text-align:center;padding:0px 8px;display:block}.enchantment-button{display:block}.enchantment-clickblock{cursor:pointer;width:100%;height:100%;display:block}.enchantment-clickblock>:not(tw-enchantment)::after{content:"";width:100%;height:100%;top:0;left:0;display:block;box-sizing:border-box;position:absolute;pointer-events:none;color:rgba(65,105,225,.5);transition:color .2s ease-in-out}.enchantment-clickblock>:not(tw-enchantment):hover::after{color:rgba(0,191,255,.5)}.enchantment-clickblock>:not(tw-enchantment):active::after{color:rgba(222,78,59,.5)}.enchantment-clickblock>:not(tw-enchantment)::after{box-shadow:inset 0 0 0 .5vmax}.enchantment-clickblock>tw-passage::after,.enchantment-clickblock>tw-sidebar::after{box-shadow:0 0 0 .5vmax}.enchantment-mouseoverblock>:not(tw-enchantment)::after{content:"";width:100%;height:100%;top:0;left:0;display:block;box-sizing:border-box;position:absolute;pointer-events:none;border:2px dashed #999}.enchantment-mouseoutblock>:not(tw-enchantment)::after{content:"";width:100%;height:100%;top:0;left:0;display:block;box-sizing:border-box;position:absolute;pointer-events:none;border:rgba(64,149,191,.6) 2px solid}.enchantment-mouseoutblock:hover>:not(tw-enchantment)::after{content:"";width:100%;height:100%;top:0;left:0;display:block;box-sizing:border-box;position:absolute;pointer-events:none;background-color:rgba(175,197,207,.75);border:rgba(0,0,0,0) 2px solid;border-radius:.2em}.enchantment-dblclickblock>:not(tw-enchantment)::after{content:"";width:100%;height:100%;top:0;left:0;display:block;box-sizing:border-box;position:absolute;pointer-events:none;cursor:pointer;border:2px solid #999}tw-dialog-links{padding-top:1.5em}tw-dialog-links tw-link{border-radius:16px;border-style:solid;border-width:2px;text-align:center;padding:0px 8px;display:block;display:inline-block}html{margin:0;height:100%;overflow-x:hidden}*,:before,:after{position:relative;box-sizing:inherit}body{margin:0;height:100%}tw-storydata{display:none}tw-story{display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;font:100% Georgia,serif;box-sizing:border-box;width:100%;min-height:100%;font-size:1.5em;line-height:1.5em;padding:5% 5%;overflow:hidden;background-color:#000;color:#fff}tw-story [style*=content-box] *{box-sizing:border-box}@media(min-width: 576px){tw-story{padding:5% 20%}}tw-story tw-consecutive-br{display:block;height:1.6ex;visibility:hidden}tw-story select{background-color:rgba(0,0,0,0);font:inherit;border-style:solid;padding:2px}tw-story select:not([disabled]){color:inherit}tw-story textarea{resize:none;background-color:rgba(0,0,0,0);font:inherit;color:inherit;border-style:none;padding:2px}tw-story input[type=text]{background-color:rgba(0,0,0,0);font:inherit;color:inherit;border-style:none}tw-story input[type=checkbox]{transform:scale(1.5);margin:0 .5em .5em .5em;vertical-align:middle}tw-story tw-noscript{animation:appear .8s}tw-passage{display:block}tw-sidebar{text-align:center;display:-ms-flexbox;display:flex;-ms-flex-pack:justify;justify-content:space-between}@media(min-width: 576px){tw-sidebar{left:-5em;width:3em;position:absolute;-ms-flex-direction:column;flex-direction:column}tw-enchantment[style*=width]>tw-sidebar{width:inherit}}tw-icon{display:inline-block;margin:.5em 0;font-size:66px;font-family:"Verdana",sans-serif}tw-icon[alt]{opacity:.2;cursor:pointer}tw-icon[alt]:hover{opacity:.4}tw-icon[data-label]::after{font-weight:bold;content:attr(data-label);font-size:20px;bottom:-20px;left:-50%;white-space:nowrap}tw-meter{display:block}tw-hook:empty,tw-expression:empty{display:none}tw-error{display:inline-block;border-radius:.2em;padding:.2em;font-size:1rem;cursor:help;white-space:pre-wrap}tw-error.error{background-color:rgba(223,58,190,.6);color:#fff}tw-error.warning{background-color:rgba(223,140,58,.6);color:#fff;display:none}.debug-mode tw-error.warning{display:inline}tw-error-explanation{display:block;font-size:.8rem;line-height:1rem}tw-open-button,tw-folddown{cursor:pointer;line-height:0em;border-radius:4px;border:1px solid rgba(255,255,255,.5);font-size:.8rem;margin:0 .2rem;padding:3px;white-space:pre}tw-folddown::after{content:"▶"}tw-folddown.open::after{content:"▼"}tw-open-button[replay]{display:none}tw-error tw-open-button,tw-eval-replay tw-open-button{display:inline !important}tw-open-button::after{content:attr(label)}tw-notifier{border-radius:.2em;padding:.2em;font-size:1rem;background-color:rgba(223,182,58,.4);display:none}.debug-mode tw-notifier{display:inline}tw-notifier::before{content:attr(message)}tw-colour{border:1px solid #000;display:inline-block;width:1em;height:1em}tw-enchantment:empty{display:none}h1{font-size:3em}h2{font-size:2.25em}h3{font-size:1.75em}h1,h2,h3,h4,h5,h6{line-height:1em;margin:.3em 0 .6em 0}pre{font-size:1rem;line-height:initial}small{font-size:70%}big{font-size:120%}mark{color:rgba(0,0,0,.6);background-color:#ff9}ins{color:rgba(0,0,0,.6);background-color:rgba(255,242,204,.5);border-radius:.5em;box-shadow:0em 0em .2em #ffe699;text-decoration:none}center{text-align:center;margin:0 auto;width:60%}blink{text-decoration:none;animation:fade-in-out 1s steps(1, end) infinite alternate}tw-align{display:block}tw-columns{display:-ms-flexbox;display:flex;-ms-flex-direction:row;flex-direction:row;-ms-flex-pack:justify;justify-content:space-between}.transition-in{animation:appear 0ms step-start}.transition-out{animation:appear 0ms step-end}[data-t8n^=dissolve].transition-in,[data-t8n=fade].transition-in{animation:appear .8s}[data-t8n^=dissolve].transition-out,[data-t8n=fade].transition-out{animation:appear .8s reverse}[data-t8n^=shudder].transition-in{display:inline-block !important;animation:shudder-in .8s}[data-t8n^=shudder].transition-out{display:inline-block !important;animation:shudder-in .8s reverse}[data-t8n^=rumble].transition-in{display:inline-block !important;animation:rumble-in .8s}[data-t8n^=rumble].transition-out{display:inline-block !important;animation:rumble-in .8s reverse}[data-t8n^=pulse].transition-in{animation:pulse .8s;display:inline-block !important}[data-t8n^=pulse].transition-out{animation:pulse .8s reverse;display:inline-block !important}[data-t8n^=zoom].transition-in{animation:zoom-in .8s;display:inline-block !important}[data-t8n^=zoom].transition-out{animation:zoom-in .8s reverse;display:inline-block !important}[data-t8n^=blur].transition-in{animation:blur .8s;display:inline-block !important}[data-t8n^=blur].transition-out{animation:blur .8s reverse;display:inline-block !important}[data-t8n^=slideleft].transition-in{animation:slide-left .8s;display:inline-block !important}[data-t8n^=slideleft].transition-out{animation:slide-right .8s reverse;display:inline-block !important}[data-t8n^=slideright].transition-in{animation:slide-right .8s;display:inline-block !important}[data-t8n^=slideright].transition-out{animation:slide-left .8s reverse;display:inline-block !important}[data-t8n^=slideup].transition-in{animation:slide-up .8s;display:inline-block !important}[data-t8n^=slideup].transition-out{animation:slide-down .8s reverse;display:inline-block !important}[data-t8n^=slidedown].transition-in{animation:slide-down .8s;display:inline-block !important}[data-t8n^=slidedown].transition-out{animation:slide-up .8s reverse;display:inline-block !important}[data-t8n^=fadeleft].transition-in{animation:fade-left .8s;display:inline-block !important}[data-t8n^=fadeleft].transition-out{animation:fade-right .8s reverse;display:inline-block !important}[data-t8n^=faderight].transition-in{animation:fade-right .8s;display:inline-block !important}[data-t8n^=faderight].transition-out{animation:fade-left .8s reverse;display:inline-block !important}[data-t8n^=fadeup].transition-in{animation:fade-up .8s;display:inline-block !important}[data-t8n^=fadeup].transition-out{animation:fade-down .8s reverse;display:inline-block !important}[data-t8n^=fadedown].transition-in{animation:fade-down .8s;display:inline-block !important}[data-t8n^=fadedown].transition-out{animation:fade-up .8s reverse;display:inline-block !important}[data-t8n^=flicker].transition-in{animation:flicker .8s}[data-t8n^=flicker].transition-out{animation:flicker .8s reverse}
 </style>
+<style id="dq-home-style">
+#dq-home{position:fixed;left:calc(12px + env(safe-area-inset-left));bottom:calc(12px + env(safe-area-inset-bottom));z-index:9990;display:inline-flex;align-items:center;padding:8px 14px;border-radius:999px;background:rgba(0,0,0,.72);border:1px solid rgba(255,255,255,.45);box-shadow:0 2px 10px rgba(0,0,0,.55);color:#fff;font-size:14px;line-height:1;text-decoration:none;opacity:.86;cursor:pointer;-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);font-family:system-ui,-apple-system,"Segoe UI",sans-serif;transition:opacity .2s ease,transform .2s ease}
+#dq-home:hover{opacity:1;transform:translateY(-2px)}
+#dq-home:active{transform:translateY(0)}
+</style>
+<script id="dq-entry-reset">
+/* 从首页进入游戏时，丢弃 Harlowe 的自动会话，强制回到标题页；读档只走「继续游戏」。
+   清掉 URL 上的 ?from=index，避免刷新时又被重置一次。 */
+(function(){
+  try{
+    if(/[?&]from=index(?:&|$)/.test(location.search)){
+      sessionStorage.removeItem("Saved Session");
+      try{ history.replaceState(null,"",location.pathname+location.hash); }catch(e){}
+    }
+  }catch(e){}
+})();
+</script>
 </head>
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play 乌托邦_1025.</tw-noscript></noscript></tw-story>
@@ -158,12 +175,12 @@ tw-story  {
     }
 }</style><script role="script" id="twine-user-script" type="text/twine-javascript">// 全局 CG 列表（定义一次）
 const cgList = [
-  { id: "empty_throne", name: "空王座", src: "https://imgbed.299969.xyz/2025/10/Image_1759670070491.png", target: "EmptyThrone" },
-  { id: "iron_crown", name: "铁王冠", src: "https://imgbed.299969.xyz/2025/10/Image_1759670062691.png", target: "IronCrown" },
-  { id: "fire", name: "社火节", src: "https://imgbed.299969.xyz/2025/10/Image_1759670055217.png", target: "FireEnding" },
-  { id: "birthday_cake", name: "生日快乐", src: "https://imgbed.299969.xyz/2025/10/Image_1759670059249.png", target: "BirthdayCake" },
-  { id: "poison", name: "饮鸩止渴", src: "https://imgbed.299969.xyz/2025/10/Image_1759670066560.png", target: "PoisonEnding" },
-  { id: "overload", name: "猝死", src: "https://imgbed.299969.xyz/2025/10/1759746403475.png", target: "Overload" },
+  { id: "empty_throne", name: "空王座", src: "https://imgbed.299269.xyz/2025/10/Image_1759670070491.png", target: "EmptyThrone" },
+  { id: "iron_crown", name: "铁王冠", src: "https://imgbed.299269.xyz/2025/10/Image_1759670062691.png", target: "IronCrown" },
+  { id: "fire", name: "社火节", src: "https://imgbed.299269.xyz/2025/10/Image_1759670055217.png", target: "FireEnding" },
+  { id: "birthday_cake", name: "生日快乐", src: "https://imgbed.299269.xyz/2025/10/Image_1759670059249.png", target: "BirthdayCake" },
+  { id: "poison", name: "饮鸩止渴", src: "https://imgbed.299269.xyz/2025/10/Image_1759670066560.png", target: "PoisonEnding" },
+  { id: "overload", name: "猝死", src: "https://imgbed.299269.xyz/2025/10/1759746403475.png", target: "Overload" },
 ];
 
 // 渲染函数
@@ -252,7 +269,7 @@ tw-link {
 
 
 </tw-passagedata><tw-passagedata pid="2" name="梦醒" tags="" position="125,175" size="100,100">(save-game:&quot;autosave&quot;)
-&lt;img src=&quot;https://imgbed.299969.xyz/2026/06/1756137240505.jpg&quot; 
+&lt;img src=&quot;https://imgbed.299269.xyz/2026/06/1756137240505.jpg&quot; 
      alt=&quot;图片描述&quot;
      style=&quot;width: 100%; height: auto; display: block; max-width: 100%;&quot;&gt;
 
@@ -276,7 +293,7 @@ tw-link {
 
 [[起床|宫殿]]</tw-passagedata><tw-passagedata pid="4" name="宫殿" tags="" position="175,300" size="100,100">(save-game:&quot;autosave&quot;)
 你来到了宫殿，准备开始一天的忙碌
-&lt;img src=&quot;https://imgbed.299969.xyz/2026/06/1781373783649.png&quot; 
+&lt;img src=&quot;https://imgbed.299269.xyz/2026/06/1781373783649.png&quot; 
      alt=&quot;图片描述&quot;
      style=&quot;width: 100%; height: auto; display: block; max-width: 100%;&quot;&gt;
      
@@ -346,7 +363,7 @@ tw-link {
 (link:&quot;苗圃&quot;)[(set:$san to it +5)(goto:&quot;苗圃&quot;)]
 (link:&quot;图书馆&quot;)[(set:$san to it +5)(goto:&quot;图书馆&quot;)]</tw-passagedata><tw-passagedata pid="11" name="苗圃" tags="" position="50,875" size="100,100">(save-game:&quot;autosave&quot;)
 
-&lt;img src=&quot;https://imgbed.299969.xyz/2025/10/IMG_20250830_231937.png&quot; 
+&lt;img src=&quot;https://imgbed.299269.xyz/2025/10/IMG_20250830_231937.png&quot; 
      alt=&quot;图片描述&quot;
      style=&quot;width: 100%; height: auto; display: block; max-width: 100%;&quot;&gt;
 
@@ -358,7 +375,7 @@ tw-link {
 [[黑夜]]
 </tw-passagedata><tw-passagedata pid="12" name="图书馆" tags="" position="250,875" size="100,100">(save-game:&quot;autosave&quot;)
 
-&lt;img src=&quot;https://imgbed.299969.xyz/2025/10/1759669140513.png&quot; 
+&lt;img src=&quot;https://imgbed.299269.xyz/2025/10/1759669140513.png&quot; 
      alt=&quot;图片描述&quot;
      style=&quot;width: 100%; height: auto; display: block; max-width: 100%;&quot;&gt;
 战争将所有人拉入同一个血肉磨盘中重重碾压，兵荒马乱的时间里，这些既不能饱腹又不能卖上价的知识载体在战火中偏安一隅，几乎完整的保存了下来。前人的结晶就在离你不远处闪耀，或许能借此获得些灵感
@@ -373,7 +390,7 @@ tw-link {
 (link:&quot;大院&quot;)[(set:$san to it -5)(goto:&quot;大院&quot;)]
 (link:&quot;宫殿&quot;)[(set:$san to it -5)(goto:&quot;青金石宫&quot;)]</tw-passagedata><tw-passagedata pid="14" name="大院" tags="" position="75,1100" size="100,100">(save-game:&quot;autosave&quot;)
      
-&lt;img src=&quot;https://imgbed.299969.xyz/2025/10/IMG_20250827_161404.png&quot; 
+&lt;img src=&quot;https://imgbed.299269.xyz/2025/10/IMG_20250827_161404.png&quot; 
      alt=&quot;图片描述&quot;
      style=&quot;width: 100%; height: auto; display: block; max-width: 100%;&quot;&gt;
 
@@ -408,7 +425,7 @@ tw-link {
 
 
 (link:&quot;工作&quot;)[(set:$sz to it +1)(goto:&quot;夜间政务&quot;)]</tw-passagedata><tw-passagedata pid="16" name="第二天" tags="" position="375,125" size="100,100">(save-game:&quot;autosave&quot;)
-&lt;img src=&quot;https://imgbed.299969.xyz/2026/06/1756137240505.jpg&quot; 
+&lt;img src=&quot;https://imgbed.299269.xyz/2026/06/1756137240505.jpg&quot; 
      alt=&quot;图片描述&quot;
      style=&quot;width: 100%; height: auto; display: block; max-width: 100%;&quot;&gt;
 普通的一天
@@ -471,7 +488,7 @@ san值：$san
     空王座
 &lt;/span&gt;
 
-&lt;img src=&quot;https://imgbed.299969.xyz/2025/10/Image_1759670070491.png&quot; 
+&lt;img src=&quot;https://imgbed.299269.xyz/2025/10/Image_1759670070491.png&quot; 
      alt=&quot;图片描述&quot;
      style=&quot;width: 100%; height: auto; display: block; max-width: 100%;&quot;&gt;
      
@@ -524,7 +541,7 @@ san值：$san
 你是帝国的圣维齐尔
 你得到一顶&lt;span style=&quot;color: #ff3333; font-weight: 900; text-shadow: 0 0 15px #ff0000, 0 0 25px #ff3333;&quot;&gt;铁王冠&lt;/span&gt;
 
-&lt;img src=&quot;https://imgbed.299969.xyz/2025/10/Image_1759670062691.png&quot; 
+&lt;img src=&quot;https://imgbed.299269.xyz/2025/10/Image_1759670062691.png&quot; 
      alt=&quot;图片描述&quot;
      style=&quot;width: 100%; max-width: 100%; height: auto; display: block;&quot;&gt;
 
@@ -569,7 +586,7 @@ san值：$san
 &lt;/span&gt;
 
 
-&lt;img src=&quot;https://imgbed.299969.xyz/2025/10/Image_1759670066560.png&quot; 
+&lt;img src=&quot;https://imgbed.299269.xyz/2025/10/Image_1759670066560.png&quot; 
      alt=&quot;图片描述&quot;
      style=&quot;width: 100%; height: auto; display: block; max-width: 100%;&quot;&gt;
 
@@ -610,7 +627,7 @@ san值：$san
 愚蠢的，浅薄的
 无知的人类！
 向那轮死月亮祈祷吧！
-&lt;img src=&quot;https://imgbed.299969.xyz/2025/10/Image_1759670055217.png&quot; 
+&lt;img src=&quot;https://imgbed.299269.xyz/2025/10/Image_1759670055217.png&quot; 
      alt=&quot;图片描述&quot;
      style=&quot;width: 100%; height: auto; display: block; max-width: 100%;&quot;&gt;
 
@@ -654,7 +671,7 @@ san值：$san
 
 生日快乐
 
-&lt;img src=&quot;https://imgbed.299969.xyz/2025/10/Image_1759670059249.png&quot; 
+&lt;img src=&quot;https://imgbed.299269.xyz/2025/10/Image_1759670059249.png&quot; 
      alt=&quot;图片描述&quot;
      style=&quot;width: 100%; height: auto; display: block; max-width: 100%;&quot;&gt;
    
@@ -757,7 +774,7 @@ san值：$san
 
 [[第二天]]</tw-passagedata><tw-passagedata pid="31" name="宫殿2" tags="" position="475,225" size="100,100">(save-game:&quot;autosave&quot;)
 你来到了宫殿，准备开始一天的忙碌
-&lt;img src=&quot;https://imgbed.299969.xyz/2026/06/1781373783649.png&quot; 
+&lt;img src=&quot;https://imgbed.299269.xyz/2026/06/1781373783649.png&quot; 
      alt=&quot;图片描述&quot;
      style=&quot;width: 100%; height: auto; display: block; max-width: 100%;&quot;&gt;
 
@@ -827,7 +844,7 @@ san值：$san
 伏案工作了一上午，你揉了揉酸痛的肩颈。你仔细地安排好政务，发现下午还能有一段时间留给奈费勒自己，而不是帝国的大维齐尔。趁着这难得的休闲时光，你要做什么呢？
 (link:&quot;苗圃&quot;)[(set:$san to it +5)(goto:&quot;苗圃2&quot;)]
 (link:&quot;图书馆&quot;)[(set:$san to it +5)(goto:&quot;图书馆2&quot;)]</tw-passagedata><tw-passagedata pid="38" name="苗圃2" tags="" position="375,625" size="100,100">(save-game:&quot;autosave&quot;)
-&lt;img src=&quot;https://imgbed.299969.xyz/2025/10/IMG_20250830_231937.png&quot; 
+&lt;img src=&quot;https://imgbed.299269.xyz/2025/10/IMG_20250830_231937.png&quot; 
      alt=&quot;图片描述&quot;
      style=&quot;width: 100%; height: auto; display: block; max-width: 100%;&quot;&gt;
    午后连阳光都变得懒散,于是你领着孩子们围坐在树下,由你读着讲授道理的寓言故事.
@@ -836,7 +853,7 @@ san值：$san
 
 [[晚上|回家2]]</tw-passagedata><tw-passagedata pid="39" name="图书馆2" tags="" position="575,625" size="100,100">(save-game:&quot;autosave&quot;)
 
-&lt;img src=&quot;https://imgbed.299969.xyz/2025/10/1759669140513.png&quot; 
+&lt;img src=&quot;https://imgbed.299269.xyz/2025/10/1759669140513.png&quot; 
      alt=&quot;图片描述&quot;
      style=&quot;width: 100%; height: auto; display: block; max-width: 100%;&quot;&gt;
 自战乱以来，图书馆鲜有人到访，好在夺回首都之后清扫的仆役还记得收拾这里。你的手指拂过一本本样式不一的书脊，捻了捻指腹：并没有多少灰尘。馆中的分类比较模糊，好在你仍熟悉你的老朋友们，无需更多的叩问。
@@ -853,7 +870,7 @@ san值：$san
 
 [[第二天|政务拆分]]</tw-passagedata><tw-passagedata pid="42" name="大院2" tags="" position="375,725" size="100,100">(save-game:&quot;autosave&quot;)
 
-&lt;img src=&quot;https://imgbed.299969.xyz/2025/10/IMG_20250827_161404.png&quot; 
+&lt;img src=&quot;https://imgbed.299269.xyz/2025/10/IMG_20250827_161404.png&quot; 
      alt=&quot;图片描述&quot;
      style=&quot;width: 100%; height: auto; display: block; max-width: 100%;&quot;&gt;
 你在王都有很多处房产，但能称之为家的只有这里。你的脚步声和风声回荡在宅子里，一切都已过去。月光陪你穿过一间间屋子。在此地的平静中，你短暂地寻找到一丝安宁。
@@ -862,7 +879,7 @@ san值：$san
 你走进屋内，桌子上的公文又有了些新的，你可以选择休息，或者继续工作
 [[睡觉|第三天]]
 (link:&quot;工作&quot;)[(set:$sz to it +1)(goto:&quot;夜间政务2&quot;)]</tw-passagedata><tw-passagedata pid="44" name="第三天" tags="" position="725,100" size="100,100">(save-game:&quot;autosave&quot;)
-&lt;img src=&quot;https://imgbed.299969.xyz/2026/06/1756137240505.jpg&quot; 
+&lt;img src=&quot;https://imgbed.299269.xyz/2026/06/1756137240505.jpg&quot; 
      alt=&quot;图片描述&quot;
      style=&quot;width: 100%; height: auto; display: block; max-width: 100%;&quot;&gt;
 普通的一天
@@ -872,14 +889,14 @@ san值：$san
 还有很多工作没有做，你决定继续工作
 一夜过去，你感到些许疲惫
 [[第三天|第三天（政务拆分）]]</tw-passagedata><tw-passagedata pid="46" name="第三天（政务拆分）" tags="" position="825,100" size="100,100">(save-game:&quot;autosave&quot;)
-&lt;img src=&quot;https://imgbed.299969.xyz/2026/06/1756137240505.jpg&quot; 
+&lt;img src=&quot;https://imgbed.299269.xyz/2026/06/1756137240505.jpg&quot; 
      alt=&quot;图片描述&quot;
      style=&quot;width: 100%; height: auto; display: block; max-width: 100%;&quot;&gt;
 普通的一天
 你抬头看去，发现天已破晓，来不及休息了，你揉了揉发疼的太阳穴，起身去处理今天的事务
 [[工作|宫殿3]]</tw-passagedata><tw-passagedata pid="47" name="政务拆分" tags="" position="550,125" size="100,100">(save-game:&quot;autosave&quot;)
 
-&lt;img src=&quot;https://imgbed.299969.xyz/2026/06/1756137240505.jpg&quot; 
+&lt;img src=&quot;https://imgbed.299269.xyz/2026/06/1756137240505.jpg&quot; 
      alt=&quot;图片描述&quot;
      style=&quot;width: 100%; height: auto; display: block; max-width: 100%;&quot;&gt;
 普通的一天
@@ -887,87 +904,87 @@ san值：$san
 
 [[工作|宫殿2]]</tw-passagedata><tw-passagedata pid="48" name="宫殿3" tags="" position="800,225" size="100,100">(save-game:&quot;autosave&quot;)
 你来到了宫殿，准备开始一天的忙碌
-&lt;img src=&quot;https://imgbed.299969.xyz/2026/06/1781373783649.png&quot; 
+&lt;img src=&quot;https://imgbed.299269.xyz/2026/06/1781373783649.png&quot; 
      alt=&quot;图片描述&quot;
      style=&quot;width: 100%; height: auto; display: block; max-width: 100%;&quot;&gt;
      
 
 (link:&quot;批阅政务&quot;)[(set:$san to it -5)(goto:&quot;政务3&quot;)]</tw-passagedata><tw-passagedata pid="49" name="第四天" tags="" position="1025,100" size="100,100">(save-game:&quot;autosave&quot;)
-&lt;img src=&quot;https://imgbed.299969.xyz/2026/06/1756137240505.jpg&quot; 
+&lt;img src=&quot;https://imgbed.299269.xyz/2026/06/1756137240505.jpg&quot; 
      alt=&quot;图片描述&quot;
      style=&quot;width: 100%; height: auto; display: block; max-width: 100%;&quot;&gt;
 普通的一天
 你的生物钟按照惯例早早地叫醒了你。天刚刚破晓，昨晚梦见了什么你已经有点模糊不清，但睡眠终还是让你的神经得到了些许的放松
 接下来你选择？
 [[起床|宫殿4]]</tw-passagedata><tw-passagedata pid="50" name="第四天（政务拆分）" tags="" position="1150,100" size="100,100">(save-game:&quot;autosave&quot;)
-&lt;img src=&quot;https://imgbed.299969.xyz/2026/06/1756137240505.jpg&quot; 
+&lt;img src=&quot;https://imgbed.299269.xyz/2026/06/1756137240505.jpg&quot; 
      alt=&quot;图片描述&quot;
      style=&quot;width: 100%; height: auto; display: block; max-width: 100%;&quot;&gt;
 普通的一天
 你抬头看去，发现天已破晓，来不及休息了，你揉了揉发疼的太阳穴，起身去处理今天的事务
 [[工作|宫殿4]]</tw-passagedata><tw-passagedata pid="51" name="第五天" tags="" position="1300,100" size="100,100">(save-game:&quot;autosave&quot;)
-&lt;img src=&quot;https://imgbed.299969.xyz/2026/06/1756137240505.jpg&quot; 
+&lt;img src=&quot;https://imgbed.299269.xyz/2026/06/1756137240505.jpg&quot; 
      alt=&quot;图片描述&quot;
      style=&quot;width: 100%; height: auto; display: block; max-width: 100%;&quot;&gt;
 普通的一天
 你的生物钟按照惯例早早地叫醒了你。天刚刚破晓，一夜无梦，但你的神经还是因为休息得到了些许的放松
 接下来你选择？
 [[起床|宫殿5]]</tw-passagedata><tw-passagedata pid="52" name="第五天（政务拆分）" tags="" position="1425,100" size="100,100">(save-game:&quot;autosave&quot;)
-&lt;img src=&quot;https://imgbed.299969.xyz/2026/06/1756137240505.jpg&quot; 
+&lt;img src=&quot;https://imgbed.299269.xyz/2026/06/1756137240505.jpg&quot; 
      alt=&quot;图片描述&quot;
      style=&quot;width: 100%; height: auto; display: block; max-width: 100%;&quot;&gt;
 普通的一天
 你抬头看去，发现天已破晓，来不及休息了，你揉了揉发疼的太阳穴，起身去处理今天的事务
 [[工作|宫殿5]]</tw-passagedata><tw-passagedata pid="53" name="第六天" tags="" position="1600,100" size="100,100">(save-game:&quot;autosave&quot;)
-&lt;img src=&quot;https://imgbed.299969.xyz/2026/06/1756137240505.jpg&quot; 
+&lt;img src=&quot;https://imgbed.299269.xyz/2026/06/1756137240505.jpg&quot; 
      alt=&quot;图片描述&quot;
      style=&quot;width: 100%; height: auto; display: block; max-width: 100%;&quot;&gt;
 普通的一天
 你的生物钟按照惯例早早地叫醒了你。天刚刚破晓，昨晚梦见了什么你已经有点模糊不清，但睡眠终还是让你的神经得到了些许的放松
 接下来你选择？
 [[起床|宫殿6]]</tw-passagedata><tw-passagedata pid="54" name="第六天政务拆分" tags="" position="1700,100" size="100,100">(save-game:&quot;autosave&quot;)
-&lt;img src=&quot;https://imgbed.299969.xyz/2026/06/1756137240505.jpg&quot; 
+&lt;img src=&quot;https://imgbed.299269.xyz/2026/06/1756137240505.jpg&quot; 
      alt=&quot;图片描述&quot;
      style=&quot;width: 100%; height: auto; display: block; max-width: 100%;&quot;&gt;
 普通的一天
 你抬头看去，发现天已破晓，来不及休息了，你揉了揉发疼的太阳穴，起身去处理今天的事务
 [[工作|宫殿6]]</tw-passagedata><tw-passagedata pid="55" name="第七天" tags="" position="1925,125" size="100,100">(save-game:&quot;autosave&quot;)
-&lt;img src=&quot;https://imgbed.299969.xyz/2026/06/1756137240505.jpg&quot; 
+&lt;img src=&quot;https://imgbed.299269.xyz/2026/06/1756137240505.jpg&quot; 
      alt=&quot;图片描述&quot;
      style=&quot;width: 100%; height: auto; display: block; max-width: 100%;&quot;&gt;
 普通的一天
 你的生物钟按照惯例早早地叫醒了你。天刚刚破晓，一夜无梦，但你的神经还是因为休息得到了些许的放松
 接下来你选择？
 [[起床|宫殿7]]</tw-passagedata><tw-passagedata pid="56" name="第七天（政务拆分）" tags="" position="2100,125" size="100,100">(save-game:&quot;autosave&quot;)
-&lt;img src=&quot;https://imgbed.299969.xyz/2026/06/1756137240505.jpg&quot; 
+&lt;img src=&quot;https://imgbed.299269.xyz/2026/06/1756137240505.jpg&quot; 
      alt=&quot;图片描述&quot;
      style=&quot;width: 100%; height: auto; display: block; max-width: 100%;&quot;&gt;
 普通的一天
 你抬头看去，发现天已破晓，来不及休息了，你揉了揉发疼的太阳穴，起身去处理今天的事务
 [[工作|宫殿7]]</tw-passagedata><tw-passagedata pid="57" name="宫殿4" tags="" position="1125,225" size="100,100">(save-game:&quot;autosave&quot;)
 你来到了宫殿，准备开始一天的忙碌
-&lt;img src=&quot;https://imgbed.299969.xyz/2026/06/1781373783649.png&quot; 
+&lt;img src=&quot;https://imgbed.299269.xyz/2026/06/1781373783649.png&quot; 
      alt=&quot;图片描述&quot;
      style=&quot;width: 100%; height: auto; display: block; max-width: 100%;&quot;&gt;
      
 
 (link:&quot;批阅政务&quot;)[(set:$san to it -5)(goto:&quot;政务4&quot;)]</tw-passagedata><tw-passagedata pid="58" name="宫殿6" tags="" position="1725,225" size="100,100">(save-game:&quot;autosave&quot;)
 你来到了宫殿，准备开始一天的忙碌
-&lt;img src=&quot;https://imgbed.299969.xyz/2026/06/1781373783649.png&quot; 
+&lt;img src=&quot;https://imgbed.299269.xyz/2026/06/1781373783649.png&quot; 
      alt=&quot;图片描述&quot;
      style=&quot;width: 100%; height: auto; display: block; max-width: 100%;&quot;&gt;
      
 
 (link:&quot;批阅政务&quot;)[(set:$san to it -5)(goto:&quot;政务6&quot;)]</tw-passagedata><tw-passagedata pid="59" name="宫殿7" tags="" position="2025,225" size="100,100">(save-game:&quot;autosave&quot;)
 你来到了宫殿，准备开始一天的忙碌
-&lt;img src=&quot;https://imgbed.299969.xyz/2026/06/1781373783649.png&quot; 
+&lt;img src=&quot;https://imgbed.299269.xyz/2026/06/1781373783649.png&quot; 
      alt=&quot;图片描述&quot;
      style=&quot;width: 100%; height: auto; display: block; max-width: 100%;&quot;&gt;
      
 
 (link:&quot;批阅政务&quot;)[(set:$san to it -5)(goto:&quot;政务7&quot;)]</tw-passagedata><tw-passagedata pid="60" name="宫殿5" tags="" position="1425,225" size="100,100">(save-game:&quot;autosave&quot;)
 你来到了宫殿，准备开始一天的忙碌
-&lt;img src=&quot;https://imgbed.299969.xyz/2026/06/1781373783649.png&quot; 
+&lt;img src=&quot;https://imgbed.299269.xyz/2026/06/1781373783649.png&quot; 
      alt=&quot;图片描述&quot;
      style=&quot;width: 100%; height: auto; display: block; max-width: 100%;&quot;&gt;
      
@@ -1287,14 +1304,14 @@ san值：$san
 
 伏案工作了一上午，你揉了揉酸痛的肩颈。你仔细地安排好政务，发现下午还能有一段时间留给奈费勒自己，而不是帝国的大维齐尔。趁着这难得的休闲时光，你要做什么呢？
 (link:&quot;图书馆&quot;)[(set:$san to it +5)(goto:&quot;图书馆7&quot;)]</tw-passagedata><tw-passagedata pid="92" name="苗圃3" tags="" position="700,625" size="100,100">(save-game:&quot;autosave&quot;)
-&lt;img src=&quot;https://imgbed.299969.xyz/2025/10/IMG_20250830_231937.png&quot; 
+&lt;img src=&quot;https://imgbed.299269.xyz/2025/10/IMG_20250830_231937.png&quot; 
      alt=&quot;图片描述&quot;
      style=&quot;width: 100%; height: auto; display: block; max-width: 100%;&quot;&gt;
    走到苗圃的时候，孩子们还在老师的带领下做手工。特制的泥团在一双双小手中捏成各种形状，小毛脑袋们兴高采烈的互相炫耀自己搓出来的小宝贝。你没有打扰，只是站在后门的影子里安静而出神的看了一会：你们种下的幼苗，这些叽叽喳喳的小鸟儿，正在一点一点长大，只要看着他们，你便确信自己仍走在一条正确的路上，你仍相信这个国家会有未来，你永远抱有一线希望。
    
 [[有一些异响|苗圃被毁2]]</tw-passagedata><tw-passagedata pid="93" name="图书馆3" tags="" position="900,625" size="100,100">(save-game:&quot;autosave&quot;)
 
-&lt;img src=&quot;https://imgbed.299969.xyz/2025/10/1759669140513.png&quot; 
+&lt;img src=&quot;https://imgbed.299269.xyz/2025/10/1759669140513.png&quot; 
      alt=&quot;图片描述&quot;
      style=&quot;width: 100%; height: auto; display: block; max-width: 100%;&quot;&gt;
 你在书架上发现了一本熟悉的书，它的封皮已经呈现岁月侵染的泥黄，你不得不将手杖暂时搁置在一旁，两只手小心翼翼的将它取出来
@@ -1332,7 +1349,7 @@ san值：$san
 (link:&quot;工作&quot;)[(set:$sz to it +1)(goto:&quot;夜间政务3&quot;)]</tw-passagedata><tw-passagedata pid="96" name="大院3" tags="" position="700,925" size="100,100">(save-game:&quot;autosave&quot;)
 
      
-&lt;img src=&quot;https://imgbed.299969.xyz/2025/10/IMG_20250827_161404.png&quot; 
+&lt;img src=&quot;https://imgbed.299269.xyz/2025/10/IMG_20250827_161404.png&quot; 
      alt=&quot;图片描述&quot;
      style=&quot;width: 100%; height: auto; display: block; max-width: 100%;&quot;&gt;
 你在王都有很多处房产，但能称之为家的只有这里。你的脚步声和风声回荡在宅子里，一切都已过去。月光陪你穿过一间间屋子。在此地的平静中，你短暂地寻找到一丝安宁。
@@ -1390,7 +1407,7 @@ san值：$san
 一夜过去，你感到些许疲惫
 [[第四天]]</tw-passagedata><tw-passagedata pid="100" name="图书馆4" tags="" position="1125,625" size="100,100">(save-game:&quot;autosave&quot;)
 
-&lt;img src=&quot;https://imgbed.299969.xyz/2025/10/1759669140513.png&quot; 
+&lt;img src=&quot;https://imgbed.299269.xyz/2025/10/1759669140513.png&quot; 
      alt=&quot;图片描述&quot;
      style=&quot;width: 100%; height: auto; display: block; max-width: 100%;&quot;&gt;
 这里依旧静谧。高大的书架像一堵又一堵沉默的围墙，外界的纷乱一层层削弱了，留给书籍们的就是沉淀后的安宁，而你身处其中，有幸分得一缕。阳光也眷顾这里，光尘纷纷扬扬，无忧无虑的飞舞着，有些被你行走带出的风搅动了，在空中自由的聚散，你出神的盯了一会，觉得它们像一室无端燃烧的光焰。
@@ -1408,7 +1425,7 @@ san值：$san
 
 (link:&quot;宫殿&quot;)[(set:$san to it -5)(goto:&quot;青金石宫4&quot;)]</tw-passagedata><tw-passagedata pid="102" name="大院4" tags="" position="1050,825" size="100,100">(save-game:&quot;autosave&quot;)
 
-&lt;img src=&quot;https://imgbed.299969.xyz/2025/10/IMG_20250827_161404.png&quot; 
+&lt;img src=&quot;https://imgbed.299269.xyz/2025/10/IMG_20250827_161404.png&quot; 
      alt=&quot;图片描述&quot;
      style=&quot;width: 100%; height: auto; display: block; max-width: 100%;&quot;&gt;
 你在王都有很多处房产，但能称之为家的只有这里。你的脚步声和风声回荡在宅子里，一切都已过去。月光陪你穿过一间间屋子。在此地的平静中，你短暂地寻找到一丝安宁。
@@ -1437,7 +1454,7 @@ san值：$san
 黑月提醒您：拉磨虽好，可不要贪多哦
 
 
-&lt;img src=&quot;https://imgbed.299969.xyz/2025/10/1759746403475.png&quot; 
+&lt;img src=&quot;https://imgbed.299269.xyz/2025/10/1759746403475.png&quot; 
      alt=&quot;图片描述&quot;
      style=&quot;width: 100%; height: auto; display: block; max-width: 100%;&quot;&gt;
     
@@ -1455,7 +1472,7 @@ san值：$san
 &lt;script&gt;
     localStorage.setItem(&quot;overload_unlocked&quot;, &quot;true&quot;);
 &lt;/script&gt;</tw-passagedata><tw-passagedata pid="106" name="图书馆5" tags="" position="1425,675" size="100,100">(save-game:&quot;autosave&quot;)
-&lt;img src=&quot;https://imgbed.299969.xyz/2025/10/1759669140513.png&quot; 
+&lt;img src=&quot;https://imgbed.299269.xyz/2025/10/1759669140513.png&quot; 
      alt=&quot;图片描述&quot;
      style=&quot;width: 100%; height: auto; display: block; max-width: 100%;&quot;&gt;
 你走进一室墨香，随意取了一本书，到你常去的位置坐下。书页被翻开，极轻的沙沙声里，你指尖悬于文字上方偏下，随阅读缓缓移动。如若文字具有灵魂，你便能描摹它们的轮廓，即使没有，你的心亦为这缄默的交流而重归宁静。阳光中，你仿佛回到某座庭院里，手边摆着一盘新作的点心，你救下过的那位游牧民姑娘跟在你身边长大了，自愿做了你的护卫，她为你斟满一杯热茶，薄荷味的水汽润泽你的鼻腔，你的家人刚好出门采买，带了两个护卫匆匆路过，朝你点头。于是你朝他们笑，翻过一页，不再回应那些温暖的视线。
@@ -1468,7 +1485,7 @@ san值：$san
 (link:&quot;宫殿&quot;)[(set:$san to it -5)(goto:&quot;青金石宫5&quot;)]</tw-passagedata><tw-passagedata pid="108" name="大院5" tags="" position="1350,900" size="100,100">(save-game:&quot;autosave&quot;)
 
      
-&lt;img src=&quot;https://imgbed.299969.xyz/2025/10/IMG_20250827_161404.png&quot; 
+&lt;img src=&quot;https://imgbed.299269.xyz/2025/10/IMG_20250827_161404.png&quot; 
      alt=&quot;图片描述&quot;
      style=&quot;width: 100%; height: auto; display: block; max-width: 100%;&quot;&gt;
 你在王都有很多处房产，但能称之为家的只有这里。你的脚步声和风声回荡在宅子里，一切都已过去。月光陪你穿过一间间屋子。在此地的平静中，你短暂地寻找到一丝安宁。
@@ -1547,7 +1564,7 @@ san值：$san
 
 [[第六天]]</tw-passagedata><tw-passagedata pid="113" name="图书馆6" tags="" position="1725,675" size="100,100">(save-game:&quot;autosave&quot;)
 
-&lt;img src=&quot;https://imgbed.299969.xyz/2025/10/1759669140513.png&quot; 
+&lt;img src=&quot;https://imgbed.299269.xyz/2025/10/1759669140513.png&quot; 
      alt=&quot;图片描述&quot;
      style=&quot;width: 100%; height: auto; display: block; max-width: 100%;&quot;&gt;
 今日没有太阳。空气中涌动着丰沛的水汽，你特意提了盏灯，将它和今日读物一起搁在桌上。
@@ -1560,7 +1577,7 @@ san值：$san
 (link:&quot;宫殿&quot;)[(set:$san to it -5)(goto:&quot;青金石宫6&quot;)]</tw-passagedata><tw-passagedata pid="115" name="大院6" tags="" position="1625,900" size="100,100">(save-game:&quot;autosave&quot;)
 
      
-&lt;img src=&quot;https://imgbed.299969.xyz/2025/10/IMG_20250827_161404.png&quot; 
+&lt;img src=&quot;https://imgbed.299269.xyz/2025/10/IMG_20250827_161404.png&quot; 
      alt=&quot;图片描述&quot;
      style=&quot;width: 100%; height: auto; display: block; max-width: 100%;&quot;&gt;
 你在王都有很多处房产，但能称之为家的只有这里。你的脚步声和风声回荡在宅子里，一切都已过去。月光陪你穿过一间间屋子。在此地的平静中，你短暂地寻找到一丝安宁。
@@ -1580,7 +1597,7 @@ san值：$san
     ]
 ]</tw-passagedata><tw-passagedata pid="118" name="图书馆7" tags="" position="2025,650" size="100,100">(save-game:&quot;autosave&quot;)
 
-&lt;img src=&quot;https://imgbed.299969.xyz/2025/10/1759669140513.png&quot; 
+&lt;img src=&quot;https://imgbed.299269.xyz/2025/10/1759669140513.png&quot; 
      alt=&quot;图片描述&quot;
      style=&quot;width: 100%; height: auto; display: block; max-width: 100%;&quot;&gt;
 “沙沙...”你笔尖点上稿纸，拉出一个又一个文字，流畅到仿佛那些故事已在你脑中雕琢许久，臻至化境，而你只需要将它们描摹到纸页上。
@@ -1677,7 +1694,7 @@ san值：$san
 啊，你落进太阳的怀抱里，即使你已粉身碎骨，燃烧殆尽
 你是帝国的圣维齐尔
 你得到一顶&lt;span style=&quot;color: #ff3333; font-weight: 900; text-shadow: 0 0 15px #ff0000, 0 0 25px #ff3333;&quot;&gt;铁王冠&lt;/span&gt;
-&lt;img src=&quot;https://imgbed.299969.xyz/2025/10/Image_1759670062691.png&quot; 
+&lt;img src=&quot;https://imgbed.299269.xyz/2025/10/Image_1759670062691.png&quot; 
      alt=&quot;图片描述&quot;
      style=&quot;width: 100%; max-width: 100%; height: auto; display: block;&quot;&gt;
 (link: &quot;再来一次&quot;)[
@@ -1748,7 +1765,7 @@ body {
     font-family: Arial, sans-serif;
 }
 &lt;/style&gt;</tw-passagedata><tw-passagedata pid="129" name="苗圃被毁" tags="" position="900,725" size="100,100">(save-game:&quot;autosave&quot;)
-&lt;img src=&quot;https://imgbed.299969.xyz/2025/10/Image_1759667603726.png&quot; 
+&lt;img src=&quot;https://imgbed.299269.xyz/2025/10/Image_1759667603726.png&quot; 
      alt=&quot;图片描述&quot;
      style=&quot;width: 100%; height: auto; display: block; max-width: 100%;&quot;&gt;
 有什么发生了，你在如残血般的夕阳之中跌跌撞撞地狂奔。
@@ -1758,7 +1775,7 @@ body {
 希望熄灭了。
 
 [[离开|跳转判定]]</tw-passagedata><tw-passagedata pid="130" name="苗圃被毁2" tags="" position="700,725" size="100,100">(save-game:&quot;autosave&quot;)
-&lt;img src=&quot;https://imgbed.299969.xyz/2025/10/Image_1759667603726.png&quot; 
+&lt;img src=&quot;https://imgbed.299269.xyz/2025/10/Image_1759667603726.png&quot; 
      alt=&quot;图片描述&quot;
      style=&quot;width: 100%; height: auto; display: block; max-width: 100%;&quot;&gt;
      有什么发生了，你在如残血般的夕阳之中跌跌撞撞地狂奔。
@@ -1874,7 +1891,7 @@ body {
 
 [[回家|疯狂分支]]</tw-passagedata><tw-passagedata pid="140" name="疯狂分支" tags="" position="800,1375" size="100,100">(save-game:&quot;autosave&quot;)
      
-&lt;img src=&quot;https://imgbed.299969.xyz/2025/10/1759672480735.png&quot; 
+&lt;img src=&quot;https://imgbed.299269.xyz/2025/10/1759672480735.png&quot; 
      alt=&quot;图片描述&quot;
      style=&quot;width: 100%; height: auto; display: block; max-width: 100%;&quot;&gt;
 &quot;大人，您今日面色不太好……&quot;
@@ -1972,7 +1989,7 @@ body {
 [[下一天|疯狂第四天]]</tw-passagedata><tw-passagedata pid="147" name="疯狂第四天" tags="" position="800,1525" size="100,100">(save-game:&quot;autosave&quot;)
 
 
-&lt;img src=&quot;https://imgbed.299969.xyz/2026/06/1756137240505.jpg&quot; 
+&lt;img src=&quot;https://imgbed.299269.xyz/2026/06/1756137240505.jpg&quot; 
      alt=&quot;图片描述&quot;
      style=&quot;width: 100%; height: auto; display: block; max-width: 100%;&quot;&gt;
 普通的一天
@@ -2107,6 +2124,10 @@ body {
 不过你好像忘记了什么很热闹的事情，你挠挠头。不过忘记了就说明不重要吧！你还急着回去呢，你把这个念头抛在脑后，启程离开了。
 你没有看见，远处一个持杖而立的身影目送着你离去。你的身影已经远到无法再看清时，那个身影摇了摇头，回到宫殿里了。
 
+&lt;img src=&quot;https://imgbed.299269.xyz/2026/10/zxzg.png&quot; 
+     alt=&quot;哲学之国&quot;
+     style=&quot;width: 100%; height: auto; display: block; max-width: 100%;&quot;&gt;
+
 [[再来一次|首页]]
 
 &lt;script&gt;
@@ -2120,7 +2141,7 @@ body {
 
 [[第七天]]</tw-passagedata><tw-passagedata pid="162" name="宫殿4疯狂" tags="" position="800,1650" size="100,100">(save-game:&quot;autosave&quot;)
 你来到了宫殿，准备开始一天的忙碌
-&lt;img src=&quot;https://imgbed.299969.xyz/2026/06/1781373783649.png&quot; 
+&lt;img src=&quot;https://imgbed.299269.xyz/2026/06/1781373783649.png&quot; 
      alt=&quot;图片描述&quot;
      style=&quot;width: 100%; height: auto; display: block; max-width: 100%;&quot;&gt;
      
@@ -2219,6 +2240,11 @@ body {
 第二天一早你起程复命，即将踏出城门的时候，你回头望了一眼。街边有炊烟随着太阳升起，这座城市正在苏醒。真是个不错的国家啊，你想到。
 不过你好像忘记了什么很热闹的事情，你挠挠头。不过忘记了就说明不重要吧！你还急着回去呢，你把这个念头抛在脑后，启程离开了。
 你没有看见，远处一个持杖而立的身影目送着你离去。你的身影已经远到无法再看清时，那个身影摇了摇头，回到宫殿里了。
+
+&lt;img src=&quot;https://imgbed.299269.xyz/2026/10/zxzg.png&quot; 
+     alt=&quot;哲学之国&quot;
+     style=&quot;width: 100%; height: auto; display: block; max-width: 100%;&quot;&gt;
+
 [[再来一次|首页]]
 
 &lt;script&gt;
@@ -2265,7 +2291,7 @@ body {
 &lt;/div&gt;
 &lt;!-- 在故事底部添加CRT效果 --&gt;
 &lt;div class=&quot;crt-effect&quot;&gt;&lt;/div&gt;</tw-passagedata><tw-passagedata pid="174" name="疯狂图书馆" tags="" position="800,2300" size="100,100">(save-game:&quot;autosave&quot;)
-&lt;img src=&quot;https://imgbed.299969.xyz/2025/10/1759669140513.png&quot; 
+&lt;img src=&quot;https://imgbed.299269.xyz/2025/10/1759669140513.png&quot; 
      alt=&quot;图片描述&quot;
      style=&quot;width: 100%; height: auto; display: block; max-width: 100%;&quot;&gt;
 
@@ -2303,13 +2329,13 @@ body {
 (link:&quot;工作&quot;)[(set:$sz to it +1)(goto:&quot;铁人奈费勒&quot;)]</tw-passagedata><tw-passagedata pid="177" name="大院疯狂" tags="" position="675,2400" size="100,100">(save-game:&quot;autosave&quot;)
 
      
-&lt;img src=&quot;https://imgbed.299969.xyz/2025/10/1759672480735.png&quot; 
+&lt;img src=&quot;https://imgbed.299269.xyz/2025/10/1759672480735.png&quot; 
      alt=&quot;图片描述&quot;
      style=&quot;width: 100%; height: auto; display: block; max-width: 100%;&quot;&gt;
 你在王都有很多处房产，但能称之为家的只有这里。你的脚步声和风声回荡在宅子里，一切都已过去。月光陪你穿过一间间屋子。
 女护卫看着你，你与她简单交谈了几句，道了晚安，这给你些许慰藉
 [[睡觉|疯狂第五天]]</tw-passagedata><tw-passagedata pid="178" name="疯狂第五天" tags="" position="800,2525" size="100,100">(save-game:&quot;autosave&quot;)
-&lt;img src=&quot;https://imgbed.299969.xyz/2026/06/1756137240505.jpg&quot; 
+&lt;img src=&quot;https://imgbed.299269.xyz/2026/06/1756137240505.jpg&quot; 
      alt=&quot;图片描述&quot;
      style=&quot;width: 100%; height: auto; display: block; max-width: 100%;&quot;&gt;
 普通的一天
@@ -2326,19 +2352,19 @@ body {
         (goto:&quot;第五天（疯狂）&quot;)
     ]
 ]</tw-passagedata><tw-passagedata pid="180" name="第五天（疯狂）" tags="" position="675,2525" size="100,100">(save-game:&quot;autosave&quot;)
-&lt;img src=&quot;https://imgbed.299969.xyz/2026/06/1756137240505.jpg&quot; 
+&lt;img src=&quot;https://imgbed.299269.xyz/2026/06/1756137240505.jpg&quot; 
      alt=&quot;图片描述&quot;
      style=&quot;width: 100%; height: auto; display: block; max-width: 100%;&quot;&gt;
 普通的一天
 你抬头看去，发现天已破晓，来不及休息了，你揉了揉发疼的太阳穴，起身去处理今天的事务
 [[工作|宫殿5狂工]]</tw-passagedata><tw-passagedata pid="181" name="宫殿5疯狂" tags="" position="800,2650" size="100,100">(save-game:&quot;autosave&quot;)
 你来到了宫殿，准备开始一天的忙碌
-&lt;img src=&quot;https://imgbed.299969.xyz/2026/06/1781373783649.png&quot; 
+&lt;img src=&quot;https://imgbed.299269.xyz/2026/06/1781373783649.png&quot; 
      alt=&quot;图片描述&quot;
      style=&quot;width: 100%; height: auto; display: block; max-width: 100%;&quot;&gt;
      
 (link:&quot;批阅政务&quot;)[(set:$san to it -5)(goto:&quot;政务疯狂2&quot;)]</tw-passagedata><tw-passagedata pid="182" name="宫殿5狂工" tags="" position="675,2650" size="100,100">(save-game:&quot;autosave&quot;)
-&lt;img src=&quot;https://imgbed.299969.xyz/2026/06/1756137240505.jpg&quot; 
+&lt;img src=&quot;https://imgbed.299269.xyz/2026/06/1756137240505.jpg&quot; 
      alt=&quot;图片描述&quot;
      style=&quot;width: 100%; height: auto; display: block; max-width: 100%;&quot;&gt;
 普通的一天
@@ -2391,13 +2417,13 @@ body {
 &lt;script&gt;
     /* ==================== 基本数据与DOM ==================== */
     const cgList = [
-        { id: &quot;empty_throne&quot;, name: &quot;空王座&quot;, src: &quot;https://imgbed.299969.xyz/2025/10/Image_1759670070491.png&quot; },
-        { id: &quot;iron_crown&quot;, name: &quot;铁王冠&quot;, src: &quot;https://imgbed.299969.xyz/2025/10/Image_1759670062691.png&quot; },
-        { id: &quot;fire&quot;, name: &quot;社火节&quot;, src: &quot;https://imgbed.299969.xyz/2025/10/Image_1759670055217.png&quot; },
-        { id: &quot;birthday_cake&quot;, name: &quot;生日快乐&quot;, src: &quot;https://imgbed.299969.xyz/2025/10/Image_1759670059249.png&quot; },
-        { id: &quot;poison&quot;, name: &quot;饮鸩止渴&quot;, src: &quot;https://imgbed.299969.xyz/2025/10/Image_1759670066560.png&quot; },
-        { id: &quot;overload&quot;, name: &quot;猝死&quot;, src: &quot;https://imgbed.299969.xyz/2025/10/1759746403475.png&quot; },
-        { id: &quot;deep_dark&quot;, name: &quot;哲学之国&quot; },
+        { id: &quot;empty_throne&quot;, name: &quot;空王座&quot;, src: &quot;https://imgbed.299269.xyz/2025/10/Image_1759670070491.png&quot; },
+        { id: &quot;iron_crown&quot;, name: &quot;铁王冠&quot;, src: &quot;https://imgbed.299269.xyz/2025/10/Image_1759670062691.png&quot; },
+        { id: &quot;fire&quot;, name: &quot;社火节&quot;, src: &quot;https://imgbed.299269.xyz/2025/10/Image_1759670055217.png&quot; },
+        { id: &quot;birthday_cake&quot;, name: &quot;生日快乐&quot;, src: &quot;https://imgbed.299269.xyz/2025/10/Image_1759670059249.png&quot; },
+        { id: &quot;poison&quot;, name: &quot;饮鸩止渴&quot;, src: &quot;https://imgbed.299269.xyz/2025/10/Image_1759670066560.png&quot; },
+        { id: &quot;overload&quot;, name: &quot;猝死&quot;, src: &quot;https://imgbed.299269.xyz/2025/10/1759746403475.png&quot; },
+        { id: &quot;deep_dark&quot;, name: &quot;哲学之国&quot;, src: &quot;https://imgbed.299269.xyz/2026/10/zxzg.png&quot; },   /* ← 哲学之国 CG 图 URL 填这里 */
         { id: &quot;moondrop&quot;, name: &quot;理想国&quot; },
         { id: &quot;insane&quot;, name: &quot;理想国（疯狂）&quot; }
     ];
@@ -2418,12 +2444,17 @@ body {
     function renderGallery() {
         gallery.innerHTML = &#39;&#39;;
         cgList.forEach(cg =&gt; {
-            if (!cg.src) return;
+            const isSecret = cg.id === &#39;deep_dark&#39;;   /* 彩蛋款：未解锁不露剪影，只显示 ？？？ */
+            if (!cg.src &amp;&amp; !isSecret) return;
             const unlocked = localStorage.getItem(cg.id + &quot;_unlocked&quot;) === &quot;true&quot;;
             const card = document.createElement(&#39;div&#39;);
-            card.className = &#39;cg-card &#39; + (unlocked ? &#39;unlocked&#39; : &#39;locked&#39;);
-            card.innerHTML = `&lt;img src=&quot;${cg.src}&quot;&gt;&lt;div class=&quot;cg-title&quot;&gt;${unlocked ? cg.name : &#39;？？？&#39;}&lt;/div&gt;`;
-            card.querySelector(&#39;img&#39;).addEventListener(&#39;click&#39;, () =&gt; {
+            card.className = &#39;cg-card &#39; + (unlocked ? &#39;unlocked&#39; : &#39;locked&#39;)
+                + (isSecret ? &#39; secret&#39; : &#39;&#39;)
+                + (cg.src ? &#39;&#39; : &#39; noimg&#39;);
+            card.innerHTML = (cg.src ? `&lt;img src=&quot;${cg.src}&quot;&gt;` : &#39;&#39;)
+                + `&lt;div class=&quot;cg-title&quot;&gt;${unlocked ? cg.name : &#39;？？？&#39;}&lt;/div&gt;`;
+            const cardImg = card.querySelector(&#39;img&#39;);
+            if (cardImg) cardImg.addEventListener(&#39;click&#39;, () =&gt; {
                 if (unlocked) {
                     fullscreenImg.src = cg.src;
                     fullscreenViewer.classList.add(&#39;show&#39;);
@@ -2879,6 +2910,8 @@ body {
         cursor: default;
     }
 
+    /* 彩蛋款（哲学之国）：未解锁只留一个暗格 + ？？？，不显示剪影 */     .cg-card.secret.locked {         background: #070707;         box-shadow: inset 0 0 0 1px #1c1c1c, 0 4px 15px rgba(0, 0, 0, 0.5);     }      .cg-card.secret.locked img {         visibility: hidden;     }      .cg-card.noimg::before {         content: &#39;&#39;;         display: block;         width: 100%;         aspect-ratio: 4 / 3;         background: #050505;     }
+
 
     .cg-title {
         padding: 10px;
@@ -3097,7 +3130,7 @@ body {
 伏案工作了一上午，你揉了揉酸痛的肩颈。你仔细地安排好政务，发现下午还能有一段时间留给奈费勒自己，而不是帝国的大维齐尔。趁着这难得的休闲时光，你要做什么呢？
 
 (link:&quot;图书馆&quot;)[(set:$san to it +5)(goto:&quot;图书馆疯狂&quot;)]</tw-passagedata><tw-passagedata pid="195" name="图书馆疯狂" tags="" position="800,3425" size="100,100">(save-game:&quot;autosave&quot;)
-&lt;img src=&quot;https://imgbed.299969.xyz/2025/10/1759669140513.png&quot; 
+&lt;img src=&quot;https://imgbed.299269.xyz/2025/10/1759669140513.png&quot; 
      alt=&quot;图片描述&quot;
      style=&quot;width: 100%; height: auto; display: block; max-width: 100%;&quot;&gt;
      
@@ -3163,7 +3196,7 @@ body {
 (link:&quot;工作&quot;)[(set:$sz to it +1)(goto:&quot;还在工&quot;)]</tw-passagedata><tw-passagedata pid="198" name="大院疯狂5" tags="" position="700,3550" size="100,100">(save-game:&quot;autosave&quot;)
 san：$san
      
-&lt;img src=&quot;https://imgbed.299969.xyz/2025/10/1759672480735.png&quot; 
+&lt;img src=&quot;https://imgbed.299269.xyz/2025/10/1759672480735.png&quot; 
      alt=&quot;图片描述&quot;
      style=&quot;width: 100%; height: auto; display: block; max-width: 100%;&quot;&gt;
 你在王都有很多处房产，但能称之为家的只有这里。你的脚步声和风声回荡在宅子里，一切都已过去。月光陪你穿过一间间屋子。
@@ -3206,7 +3239,7 @@ san：$san
         (goto:&quot;第六天疯狂&quot;)
     ]
 ]</tw-passagedata><tw-passagedata pid="201" name="第六天疯狂" tags="" position="800,3800" size="100,100">(save-game:&quot;autosave&quot;)
-&lt;img src=&quot;https://imgbed.299969.xyz/2026/06/1756137240505.jpg&quot; 
+&lt;img src=&quot;https://imgbed.299269.xyz/2026/06/1756137240505.jpg&quot; 
      alt=&quot;图片描述&quot;
      style=&quot;width: 100%; height: auto; display: block; max-width: 100%;&quot;&gt;
 普通的一天
@@ -3214,7 +3247,7 @@ san：$san
 接下来你选择？
 [[起床|宫殿6疯狂]]</tw-passagedata><tw-passagedata pid="202" name="宫殿6疯狂" tags="" position="800,3925" size="100,100">(save-game:&quot;autosave&quot;)
 你来到了宫殿，准备开始一天的忙碌
-&lt;img src=&quot;https://imgbed.299969.xyz/2026/06/1781373783649.png&quot; 
+&lt;img src=&quot;https://imgbed.299269.xyz/2026/06/1781373783649.png&quot; 
      alt=&quot;图片描述&quot;
      style=&quot;width: 100%; height: auto; display: block; max-width: 100%;&quot;&gt;
      
@@ -3290,7 +3323,7 @@ san：$san
 &lt;div class=&quot;crt-effect&quot;&gt;&lt;/div&gt;</tw-passagedata><tw-passagedata pid="209" name="疯狂外出" tags="" position="800,4525" size="100,100">(save-game:&quot;autosave&quot;)
 伏案工作了一上午，你揉了揉酸痛的肩颈。你仔细地安排好政务，发现下午还能有一段时间留给奈费勒自己，而不是帝国的大维齐尔。趁着这难得的休闲时光，你要做什么呢？
 (link:&quot;图书馆&quot;)[(set:$san to it +5)(goto:&quot;图书馆疯狂2&quot;)]</tw-passagedata><tw-passagedata pid="210" name="图书馆疯狂2" tags="" position="800,4650" size="100,100">(save-game:&quot;autosave&quot;)
-&lt;img src=&quot;https://imgbed.299969.xyz/2025/10/1759669140513.png&quot; 
+&lt;img src=&quot;https://imgbed.299269.xyz/2025/10/1759669140513.png&quot; 
      alt=&quot;图片描述&quot;
      style=&quot;width: 100%; height: auto; display: block; max-width: 100%;&quot;&gt;
 (char-style: via (t8n-delay:pos*100)+(t8n:&#39;instant&#39;))[你有时会想，人的灵思如同大河，而当他们落笔，便是将自己生命长河的一部分裂引出去，流进纸垒的河道，让它代自己做那历史里的河灯，引渡后来者。
@@ -3360,13 +3393,13 @@ san：$san
 (link:&quot;工作&quot;)[(set:$sz to it +1)(goto:&quot;哥们爆疯狂了&quot;)]</tw-passagedata><tw-passagedata pid="213" name="大院疯狂6" tags="" position="700,4800" size="100,100">(save-game:&quot;autosave&quot;)
 san：$san
      
-&lt;img src=&quot;https://imgbed.299969.xyz/2025/10/1759672480735.png&quot; 
+&lt;img src=&quot;https://imgbed.299269.xyz/2025/10/1759672480735.png&quot; 
      alt=&quot;图片描述&quot;
      style=&quot;width: 100%; height: auto; display: block; max-width: 100%;&quot;&gt;
 你在王都有很多处房产，但能称之为家的只有这里。你的脚步声和风声回荡在宅子里，一切都已过去。月光陪你穿过一间间屋子。
 女护卫看着你，你与她简单交谈了几句，道了晚安，这给你些许慰藉
 [[睡觉|疯狂第七天]]</tw-passagedata><tw-passagedata pid="214" name="疯狂第七天" tags="" position="800,4925" size="100,100">(save-game:&quot;autosave&quot;)
-&lt;img src=&quot;https://imgbed.299969.xyz/2026/06/1756137240505.jpg&quot; 
+&lt;img src=&quot;https://imgbed.299269.xyz/2026/06/1756137240505.jpg&quot; 
      alt=&quot;图片描述&quot;
      style=&quot;width: 100%; height: auto; display: block; max-width: 100%;&quot;&gt;
 普通的一天
@@ -3384,7 +3417,7 @@ san：$san
     ]
 ]</tw-passagedata><tw-passagedata pid="216" name="宫殿7疯狂" tags="" position="800,5050" size="100,100">(save-game:&quot;autosave&quot;)
 你来到了宫殿，准备开始一天的忙碌
-&lt;img src=&quot;https://imgbed.299969.xyz/2026/06/1781373783649.png&quot; 
+&lt;img src=&quot;https://imgbed.299269.xyz/2026/06/1781373783649.png&quot; 
      alt=&quot;图片描述&quot;
      style=&quot;width: 100%; height: auto; display: block; max-width: 100%;&quot;&gt;
      
@@ -3440,7 +3473,7 @@ san：$san
 [[回家|疯狂月堕前]]]</tw-passagedata><tw-passagedata pid="221" name="疯狂月堕前" tags="" position="800,5625" size="100,100">(save-game:&quot;autosave&quot;)
 
      
-&lt;img src=&quot;https://imgbed.299969.xyz/2025/10/1759672480735.png&quot; 
+&lt;img src=&quot;https://imgbed.299269.xyz/2025/10/1759672480735.png&quot; 
      alt=&quot;图片描述&quot;
      style=&quot;width: 100%; height: auto; display: block; max-width: 100%;&quot;&gt;
 你在王都有很多处房产，但能称之为家的只有这里。你的脚步声和风声回荡在宅子里，一切都已过去。月光陪你穿过一间间屋子。
@@ -3476,7 +3509,7 @@ san：$san
     空王座
 &lt;/span&gt;
 
-&lt;img src=&quot;https://imgbed.299969.xyz/2025/10/Image_1759670070491.png&quot; 
+&lt;img src=&quot;https://imgbed.299269.xyz/2025/10/Image_1759670070491.png&quot; 
      alt=&quot;图片描述&quot;
      style=&quot;width: 100%; height: auto; display: block; max-width: 100%;&quot;&gt;</tw-passagedata><tw-passagedata pid="224" name="IronCrown" tags="" position="1800,5600" size="100,100">结局：铁王冠
 
@@ -3514,7 +3547,7 @@ san：$san
 你是帝国的圣维齐尔
 你得到一顶&lt;span style=&quot;color: #ff3333; font-weight: 900; text-shadow: 0 0 15px #ff0000, 0 0 25px #ff3333;&quot;&gt;铁王冠&lt;/span&gt;
 
-&lt;img src=&quot;https://imgbed.299969.xyz/2025/10/Image_1759670062691.png&quot; 
+&lt;img src=&quot;https://imgbed.299269.xyz/2025/10/Image_1759670062691.png&quot; 
      alt=&quot;图片描述&quot;
      style=&quot;width: 100%; max-width: 100%; height: auto; display: block;&quot;&gt;</tw-passagedata><tw-passagedata pid="225" name="FireEnding" tags="" position="1700,5700" size="100,100">又一次，你被绑在了火刑架上……
 随便吧
@@ -3540,7 +3573,7 @@ san：$san
 愚蠢的，浅薄的
 无知的人类！
 向那轮死月亮祈祷吧！
-&lt;img src=&quot;https://imgbed.299969.xyz/2025/10/Image_1759670055217.png&quot; 
+&lt;img src=&quot;https://imgbed.299269.xyz/2025/10/Image_1759670055217.png&quot; 
      alt=&quot;图片描述&quot;
      style=&quot;width: 100%; height: auto; display: block; max-width: 100%;&quot;&gt;</tw-passagedata><tw-passagedata pid="226" name="BirthdayCake" tags="" position="1800,5700" size="100,100">你知道，你永远也无法满足所有人的愿望。
 一颗有罪的石头
@@ -3567,7 +3600,7 @@ san：$san
 
 生日快乐
 
-&lt;img src=&quot;https://imgbed.299969.xyz/2025/10/Image_1759670059249.png&quot; 
+&lt;img src=&quot;https://imgbed.299269.xyz/2025/10/Image_1759670059249.png&quot; 
      alt=&quot;图片描述&quot;
      style=&quot;width: 100%; height: auto; display: block; max-width: 100%;&quot;&gt;</tw-passagedata><tw-passagedata pid="227" name="PoisonEnding" tags="" position="1700,5800" size="100,100">结局：饮鸩止渴
 
@@ -3597,7 +3630,7 @@ san：$san
 &lt;/span&gt;
 
 
-&lt;img src=&quot;https://imgbed.299969.xyz/2025/10/Image_1759670066560.png&quot; 
+&lt;img src=&quot;https://imgbed.299269.xyz/2025/10/Image_1759670066560.png&quot; 
      alt=&quot;图片描述&quot;
      style=&quot;width: 100%; height: auto; display: block; max-width: 100%;&quot;&gt;</tw-passagedata><tw-passagedata pid="228" name="Overload" tags="" position="1800,5800" size="100,100">在疯狂的，连续的，足够麻痹一切痛苦的工作之中，你陷入了一阵久违的宁静。
 而你的心脏早已不堪重负地抽紧，你站起身，试着呼喊门外的侍从……在你能够出声之前，你发现自己倒在地上，胡桃木的椅子倒在你的身边。安神的熏香，华贵的地毯和侍从匆忙的脚步声成为了你最后感知到的东西。
@@ -3610,7 +3643,7 @@ san：$san
 黑月提醒您：拉磨虽好，可不要贪多哦
 
 
-&lt;img src=&quot;https://imgbed.299969.xyz/2025/10/1759746403475.png&quot; 
+&lt;img src=&quot;https://imgbed.299269.xyz/2025/10/1759746403475.png&quot; 
      alt=&quot;图片描述&quot;
      style=&quot;width: 100%; height: auto; display: block; max-width: 100%;&quot;&gt;</tw-passagedata><tw-passagedata pid="229" name="Moondrop" tags="" position="1900,5600" size="100,100">&lt;span style=&quot;color: #add8e6; text-shadow: 0 0 10px #add8e6, 0 0 20px #add8e6;&quot;&gt;
     ■■着你的人们仰面望着你，等待你的统治。
@@ -3658,7 +3691,12 @@ san：$san
 睡梦中，你好像听到了一声叹息。有人在轻声说“很抱歉，这位远道而来的客人。我对您今天在精神上受到的伤害致以真挚的歉意。为了您的健康着想，忘记吧。”你突然感觉意识一沉，记忆中一些画面被抹去了，一夜无梦。
 第二天一早你起程复命，即将踏出城门的时候，你回头望了一眼。街边有炊烟随着太阳升起，这座城市正在苏醒。真是个不错的国家啊，你想到。
 不过你好像忘记了什么很热闹的事情，你挠挠头。不过忘记了就说明不重要吧！你还急着回去呢，你把这个念头抛在脑后，启程离开了。
-你没有看见，远处一个持杖而立的身影目送着你离去。你的身影已经远到无法再看清时，那个身影摇了摇头，回到宫殿里了。</tw-passagedata></tw-storydata>
+你没有看见，远处一个持杖而立的身影目送着你离去。你的身影已经远到无法再看清时，那个身影摇了摇头，回到宫殿里了。
+
+&lt;img src=&quot;https://imgbed.299269.xyz/2026/10/zxzg.png&quot; 
+     alt=&quot;哲学之国&quot;
+     style=&quot;width: 100%; height: auto; display: block; max-width: 100%;&quot;&gt;
+</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim
@@ -3678,5 +3716,6 @@ h(Math,"asinh",xr.asinh,Math.asinh(1e300)===Infinity);h(Math,"atanh",xr.atanh,Ma
 ;require("harlowe")}());
 </script>
 
+<a id="dq-home" href="index.html" title="返回首页" aria-label="返回首页">⌂ 返回首页</a>
 </body>
 </html>

@@ -77,7 +77,24 @@
 				padding-top: 3.2em !important;
 			}
 		}
-	</style></head>
+	</style><style id="dq-home-style">
+#dq-home{position:fixed;left:calc(12px + env(safe-area-inset-left));bottom:calc(12px + env(safe-area-inset-bottom));z-index:9990;display:inline-flex;align-items:center;padding:8px 14px;border-radius:999px;background:rgba(0,0,0,.72);border:1px solid rgba(255,255,255,.45);box-shadow:0 2px 10px rgba(0,0,0,.55);color:#fff;font-size:14px;line-height:1;text-decoration:none;opacity:.86;cursor:pointer;-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);font-family:system-ui,-apple-system,"Segoe UI",sans-serif;transition:opacity .2s ease,transform .2s ease}
+#dq-home:hover{opacity:1;transform:translateY(-2px)}
+#dq-home:active{transform:translateY(0)}
+</style>
+<script id="dq-entry-reset">
+/* 从首页进入游戏时，丢弃 Harlowe 的自动会话，强制回到标题页；读档只走「继续游戏」。
+   清掉 URL 上的 ?from=index，避免刷新时又被重置一次。 */
+(function(){
+  try{
+    if(/[?&]from=index(?:&|$)/.test(location.search)){
+      sessionStorage.removeItem("Saved Session");
+      try{ history.replaceState(null,"",location.pathname+location.hash); }catch(e){}
+    }
+  }catch(e){}
+})();
+</script>
+</head>
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play 观赏路线框架.</tw-noscript></noscript></tw-story>
 <tw-storydata name="观赏路线框架" startnode="1" creator="Twine" creator-version="2.10.0" format="Harlowe" format-version="3.3.9" ifid="5B0D877D-8C65-4278-9DB1-39858863F557" options="" tags="" zoom="0.3" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">
@@ -165,11 +182,13 @@ if (!window.bgmAudio) {
 &lt;h1 style=&quot;color: whitek; font-size: 48px; font-weight: bold; text-align: center;&quot;&gt;
  黄金乡
 &lt;!-- 直接显示GIF，依赖浏览器预加载 --&gt;
-&lt;img src=&quot;https://imgbed.299969.xyz/2025/10/Image_1759911110504.gif&quot; 
+&lt;img src=&quot;https://imgbed.299269.xyz/2025/10/Image_1759911110504.gif&quot; 
      alt=&quot;动态图片&quot;
      style=&quot;width: 100%; max-width: 100%; height: auto; display: block;&quot;
      loading=&quot;eager&quot;&gt;
-     (link:&quot;开始&quot;)[(goto:&quot;第一天&quot;)]
+     (link:&quot;新的一天&quot;)[(goto:&quot;第一天&quot;)]
+     
+(if: (saved-games:) contains &quot;autosave&quot;)[(link:&quot;继续游戏&quot;)[(load-game:&quot;autosave&quot;)]]
      
      [[游玩提醒]]</tw-passagedata><tw-passagedata pid="2" name="开始" tags="" position="150,550" size="100,100">{(replace:?sidebar)[(link-undo:&quot;返回&quot;) (link-rerun:&quot;保存&quot;)[](size:0.8)+(color:red+black)[♢天数：1]]
 (enchant:?link,(color:grey+black)+(size:0.8))}
@@ -269,7 +288,8 @@ document.addEventListener(&#39;keydown&#39;, function(e) {
     e.preventDefault();
   }
 });
-    &lt;/script&gt;]</tw-passagedata><tw-passagedata pid="7" name="打开桌面上的报告" tags="" position="300,300" size="100,100">(replace:?sidebar)[(link-undo:&quot;返回&quot;) (link-rerun:&quot;保存&quot;)[](link:&quot;存档&quot;)[(dialog:[(display:&quot;存档系统&quot;)],&quot;×&quot;)][](size:0.8)+(color:red+black)[♢天数：1]]
+    &lt;/script&gt;]
+(if:(passage:)'s name is not &quot;首页&quot;)[(save-game:&quot;autosave&quot;)]</tw-passagedata><tw-passagedata pid="7" name="打开桌面上的报告" tags="" position="300,300" size="100,100">(replace:?sidebar)[(link-undo:&quot;返回&quot;) (link-rerun:&quot;保存&quot;)[](link:&quot;存档&quot;)[(dialog:[(display:&quot;存档系统&quot;)],&quot;×&quot;)][](size:0.8)+(color:red+black)[♢天数：1]]
 你看了看桌上的例行报告，照常处理：
 (bg:white)[&lt;span style=&quot;color:black;&quot;&gt;
 (text-style:&quot;italic&quot;)[规则制订早已完善，只需时刻展示；
@@ -1299,5 +1319,6 @@ h(Math,"asinh",xr.asinh,Math.asinh(1e300)===Infinity);h(Math,"atanh",xr.atanh,Ma
 ;require("harlowe")}());
 </script>
 
+<a id="dq-home" href="index.html" title="返回首页" aria-label="返回首页">⌂ 返回首页</a>
 </body>
 </html>
