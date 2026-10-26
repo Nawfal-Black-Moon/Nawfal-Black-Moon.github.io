@@ -78,9 +78,10 @@
 			}
 		}
 	</style><style id="dq-home-style">
-#dq-home{position:fixed;left:calc(12px + env(safe-area-inset-left));bottom:calc(12px + env(safe-area-inset-bottom));z-index:9990;display:inline-flex;align-items:center;padding:8px 14px;border-radius:999px;background:rgba(0,0,0,.72);border:1px solid rgba(255,255,255,.45);box-shadow:0 2px 10px rgba(0,0,0,.55);color:#fff;font-size:14px;line-height:1;text-decoration:none;opacity:.86;cursor:pointer;-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);font-family:system-ui,-apple-system,"Segoe UI",sans-serif;transition:opacity .2s ease,transform .2s ease}
-#dq-home:hover{opacity:1;transform:translateY(-2px)}
-#dq-home:active{transform:translateY(0)}
+#dq-home{position:fixed;right:calc(12px + env(safe-area-inset-right));bottom:calc(12px + env(safe-area-inset-bottom));left:auto;top:auto;z-index:99998;display:inline-flex;align-items:center;padding:8px 14px;border-radius:999px;background:rgba(0,0,0,.72);border:1px solid rgba(255,255,255,.45);box-shadow:0 2px 10px rgba(0,0,0,.55);color:#fff;font-size:14px;line-height:1;text-decoration:none;opacity:.55;cursor:grab;-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);font-family:system-ui,-apple-system,"Segoe UI",sans-serif;transition:opacity .2s ease,left .18s ease,top .18s ease;touch-action:none;-webkit-user-select:none;user-select:none;-webkit-user-drag:none;white-space:nowrap}
+#dq-home:hover{opacity:.95}
+#dq-home.dq-dragging{opacity:.95;transition:none;cursor:grabbing}
+@media (max-width:600px){#dq-home{padding:7px 11px;font-size:12px}}
 </style>
 <script id="dq-entry-reset">
 /* 从首页进入游戏时，丢弃 Harlowe 的自动会话，强制回到标题页；读档只走「继续游戏」。
@@ -1319,6 +1320,102 @@ h(Math,"asinh",xr.asinh,Math.asinh(1e300)===Infinity);h(Math,"atanh",xr.atanh,Ma
 ;require("harlowe")}());
 </script>
 
-<a id="dq-home" href="index.html" title="返回首页" aria-label="返回首页">⌂ 返回首页</a>
+<a id="dq-home" href="index.html" title="返回首页（可拖动）" aria-label="返回首页">⌂ 返回首页</a>
+<script id="dq-home-drag">
+/* 悬浮“返回首页”：可拖动，松手吸附到最近的左/右边缘，位置记忆 */
+(function () {
+  var a = document.getElementById('dq-home');
+  if (!a) return;
+  var KEY = 'dq-home-pos';
+  var M = 10;                       /* 离边缘的最小间距 */
+  var drag = false, moved = false, sx = 0, sy = 0, ox = 0, oy = 0;
+  var suppressUntil = 0;            /* 拖动刚结束时，抑制紧跟的那次 click */
+
+  function vw() { return document.documentElement.clientWidth || window.innerWidth; }
+  function vh() { return window.innerHeight; }
+
+  function place(x, y) {
+    var r = a.getBoundingClientRect();
+    var maxX = Math.max(M, vw() - r.width - M);
+    var maxY = Math.max(M, vh() - r.height - M);
+    x = Math.max(M, Math.min(x, maxX));
+    y = Math.max(M, Math.min(y, maxY));
+    a.style.left = x + 'px';
+    a.style.top = y + 'px';
+    a.style.right = 'auto';
+    a.style.bottom = 'auto';
+  }
+
+  function save() {
+    try {
+      var r = a.getBoundingClientRect();
+      localStorage.setItem(KEY, JSON.stringify({
+        side: (r.left + r.width / 2) < vw() / 2 ? 'left' : 'right',
+        y: r.top / vh()
+      }));
+    } catch (e) {}
+  }
+
+  function restore() {
+    var saved = null;
+    try { saved = JSON.parse(localStorage.getItem(KEY) || 'null'); } catch (e) {}
+    if (saved && (saved.side === 'left' || saved.side === 'right')) {
+      place(saved.side === 'left' ? M : vw() - a.offsetWidth - M,
+            (typeof saved.y === 'number' ? saved.y : 0.9) * vh());
+      return;
+    }
+    var r = a.getBoundingClientRect();
+    place(vw() - r.width - M, r.top);   /* 默认贴右下 */
+  }
+
+  a.addEventListener('pointerdown', function (e) {
+    if (e.button !== undefined && e.button !== 0) return;
+    var r = a.getBoundingClientRect();
+    drag = true; moved = false;
+    sx = e.clientX; sy = e.clientY;
+    ox = e.clientX - r.left; oy = e.clientY - r.top;
+    a.classList.add('dq-dragging');
+    try { a.setPointerCapture(e.pointerId); } catch (e2) {}
+  });
+
+  a.addEventListener('pointermove', function (e) {
+    if (!drag) return;
+    if (!moved && Math.abs(e.clientX - sx) + Math.abs(e.clientY - sy) > 6) moved = true;
+    if (moved) place(e.clientX - ox, e.clientY - oy);
+  });
+
+  function end(e) {
+    if (!drag) return;
+    drag = false;
+    a.classList.remove('dq-dragging');
+    try { a.releasePointerCapture(e.pointerId); } catch (e2) {}
+    if (moved) {
+      var r = a.getBoundingClientRect();
+      var toLeft = (r.left + r.width / 2) < vw() / 2;
+      place(toLeft ? M : vw() - r.width - M, r.top);
+      save();
+      suppressUntil = Date.now() + 400;   /* 只吞掉拖动后紧跟的那一下 */
+    }
+    moved = false;
+  }
+  a.addEventListener('pointerup', end);
+  a.addEventListener('pointercancel', end);
+
+  a.addEventListener('click', function (e) {
+    if (Date.now() < suppressUntil) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+  });
+
+  window.addEventListener('resize', function () {
+    var r = a.getBoundingClientRect();
+    var toLeft = (r.left + r.width / 2) < vw() / 2;
+    place(toLeft ? M : vw() - r.width - M, r.top);
+  });
+
+  restore();
+})();
+</script>
 </body>
 </html>
